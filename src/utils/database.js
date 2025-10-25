@@ -1,12 +1,29 @@
 import Database from 'better-sqlite3';
 
-const db = new Database('nanur-barir-adventure.db', { verbose: console.log });
+const db = new Database('nanur-barir-adventure.db');
 
-// Create tables if they don't exist
+// Check if the balance column exists, if so, rename it to wallet
+const tableInfo = db.prepare("PRAGMA table_info(users)").all();
+if (tableInfo.some(column => column.name === 'balance')) {
+    db.exec('ALTER TABLE users RENAME COLUMN balance TO wallet');
+}
+
+// Add bank and bank_capacity columns if they don't exist
+const columns = tableInfo.map(column => column.name);
+if (!columns.includes('bank')) {
+    db.exec('ALTER TABLE users ADD COLUMN bank INTEGER DEFAULT 0');
+}
+if (!columns.includes('bank_capacity')) {
+    db.exec('ALTER TABLE users ADD COLUMN bank_capacity INTEGER DEFAULT 10000');
+}
+
+
 db.exec(`
     CREATE TABLE IF NOT EXISTS users (
         id TEXT PRIMARY KEY,
-        balance INTEGER DEFAULT 0
+        wallet INTEGER DEFAULT 0,
+        bank INTEGER DEFAULT 0,
+        bank_capacity INTEGER DEFAULT 10000
     );
 `);
 
@@ -23,13 +40,13 @@ function getUser(id) {
     let user = db.prepare('SELECT * FROM users WHERE id = ?').get(id);
     if (!user) {
         db.prepare('INSERT INTO users (id) VALUES (?)').run(id);
-        user = { id, balance: 0 };
+        user = { id, wallet: 0, bank: 0, bank_capacity: 10000 };
     }
     return user;
 }
 
-function updateUserBalance(id, amount) {
-    db.prepare('UPDATE users SET balance = balance + ? WHERE id = ?').run(amount, id);
+function updateUserWallet(id, amount) {
+    db.prepare('UPDATE users SET wallet = wallet + ? WHERE id = ?').run(amount, id);
 }
 
 function getUserInventory(id) {
@@ -49,4 +66,4 @@ function clearUserInventory(id) {
     db.prepare('DELETE FROM inventories WHERE user_id = ?').run(id);
 }
 
-export default { getUser, updateUserBalance, getUserInventory, updateUserInventory, clearUserInventory };
+export default { getUser, updateUserWallet, getUserInventory, updateUserInventory, clearUserInventory };

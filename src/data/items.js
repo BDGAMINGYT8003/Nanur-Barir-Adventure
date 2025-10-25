@@ -1,0 +1,16 @@
+export const items = {
+    "Ghostly Lantern": "<a:GhostlyLantern:123456789012345678>",
+    "Haunted Ring": "<:HauntedRing:123456789012345678>",
+    "Voodoo Doll": "<:VoodooDoll:123456789012345678>",
+    "Jin's Talisman": "<:JinsTalisman:123456789012345678>",
+    "Spooky Photo": "<:SpookyPhoto:123456789012345678>",
+    "Ancient Coin": "<:AncientCoin:123456789012345678>",
+    "Spooky Cassette": "<:SpookyCassette:123456789012345678>",
+    "Cursed Shawl": "<:CursedShawl:123456789012345678>",
+    "Antique Compass": "<:AntiqueCompass:123456789012345678>",
+    "Cursed Feather": "<:CursedFeather:123456789012345678>",
+    "Haunted Box": "<:HauntedBox:123456789012345678>",
+    "Lifesaver": "<:Lifesaver:123456789012345678>",
+    "Energy Drink": "<:EnergyDrink:123456789012345678>",
+    "Padlock": "<:Padlock:123456789012345678>",
+};

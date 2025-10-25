@@ -2,6 +2,7 @@ import { Events, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } fr
 import { createSession, getSession, advanceSession, getCurrentNode, endSession } from '../utils/adventureManager.js';
 import db from '../utils/database.js';
 import logger from '../utils/logger.js';
+import { items as itemData } from '../data/items.js';
 
 async function getNextAdventureNode(interaction, session) {
     const node = getCurrentNode(session.userId);
@@ -30,7 +31,7 @@ async function getNextAdventureNode(interaction, session) {
         const outcome = node.options[0].outcomes[0];
         if (outcome.result.startsWith('⏣')) {
             const amount = parseInt(outcome.result.split(' ')[1].replace(/,/g, ''));
-            db.updateUserBalance(session.userId, amount);
+            db.updateUserWallet(session.userId, amount);
         } else if (outcome.result !== 'Nothing Happens') {
             db.updateUserInventory(session.userId, outcome.result, 1);
         }
@@ -115,7 +116,7 @@ export default {
                 // Update inventory
                 if (outcome.result.startsWith('⏣')) {
                     const amount = parseInt(outcome.result.split(' ')[1].replace(/,/g, ''));
-                    db.updateUserBalance(session.userId, amount);
+                    db.updateUserWallet(session.userId, amount);
                 } else if (outcome.result === 'Lose your items') {
                     db.clearUserInventory(session.userId);
                 } else if (outcome.result.includes('Lifesaver') || outcome.result.includes('Energy Drink') || outcome.result.includes('Padlock')) {
@@ -179,6 +180,65 @@ export default {
                 const inventory = db.getUserInventory(session.userId);
                 const inventoryList = inventory.length > 0 ? `- ${inventory.map(i => `📦 ${i.item} (x${i.quantity})`).join('\n- ')}` : "You have no items.";
                 await interaction.followUp({ content: `**Inventory:**\n${inventoryList}`, ephemeral: true });
+            } else if (interaction.customId.startsWith('inventory_')) {
+                const [action, userId, pageStr] = interaction.customId.split('_').slice(1);
+                let page = parseInt(pageStr);
+
+                if (interaction.user.id !== userId) {
+                    await interaction.followUp({ content: "You cannot control another user's inventory.", ephemeral: true });
+                    return;
+                }
+
+                if (action === 'next') {
+                    page++;
+                } else if (action === 'prev') {
+                    page--;
+                }
+
+                const user = await interaction.client.users.fetch(userId);
+                const inventory = db.getUserInventory(user.id);
+                const itemsPerPage = 8;
+                const totalPages = Math.ceil(inventory.length / itemsPerPage) || 1;
+
+                const generateEmbed = (page) => {
+                    const start = page * itemsPerPage;
+                    const end = start + itemsPerPage;
+                    const currentItems = inventory.slice(start, end);
+
+                    const description = currentItems.map(item => {
+                        const emoji = itemData[item.item] || '📦';
+                        return `**${emoji} ${item.item}** ─ ${item.quantity}`;
+                    }).join('\n');
+
+                    return new EmbedBuilder()
+                        .setTitle(`${user.username}'s Inventory`)
+                        .setThumbnail(user.displayAvatarURL())
+                        .setDescription(description || 'This user has no items.')
+                        .setColor(5793266)
+                        .setTimestamp()
+                        .setFooter({ text: `Page ${page + 1} of ${totalPages}` });
+                };
+
+                const generateButtons = (page) => {
+                    return new ActionRowBuilder()
+                        .addComponents(
+                            new ButtonBuilder()
+                                .setCustomId(`inventory_prev_${user.id}_${page}`)
+                                .setEmoji('⬅️')
+                                .setStyle(ButtonStyle.Secondary)
+                                .setDisabled(page === 0),
+                            new ButtonBuilder()
+                                .setCustomId(`inventory_next_${user.id}_${page}`)
+                                .setEmoji('➡️')
+                                .setStyle(ButtonStyle.Secondary)
+                                .setDisabled(page >= totalPages - 1),
+                        );
+                };
+
+                const embed = generateEmbed(page);
+                const row = generateButtons(page);
+
+                await interaction.editReply({ embeds: [embed], components: [row] });
             }
         }
     },
