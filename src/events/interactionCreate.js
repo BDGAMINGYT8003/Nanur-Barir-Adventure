@@ -64,7 +64,7 @@ async function handleAdventureNode(interaction, session) {
 
     let description = node.scenario;
     if (node.type === 'NON_INTERACTIVE') {
-        description += `\n\n- ${node.options[0].outcomes[0].flavor}`;
+        description = `> ${description.replace(/\n/g, '\n> ')}\n\n- ${node.options[0].outcomes[0].flavor}`;
     }
 
     const embed = new EmbedBuilder().setTitle('An Adventure!').setDescription(description).setColor('#0099ff');
@@ -123,7 +123,7 @@ export default {
                     }
                 }
 
-                let description = `${node.scenario}\n\n**You chose: \`${option.action}\`**\n${outcome.flavor}`;
+                let description = `> ${node.scenario.replace(/\n/g, '\n> ')}\n\n**You chose: \`${option.action}\`**\n${outcome.flavor}`;
 
                 switch (outcome.type) {
                     case 'REWARD':
