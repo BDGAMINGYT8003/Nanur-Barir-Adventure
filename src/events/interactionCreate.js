@@ -83,7 +83,7 @@ async function handleAdventureNode(interaction, session) {
         });
     }
 
-    await interaction.editReply({ embeds: [embed], components: [row] });
+    await interaction.editReply({ embeds: [embed], components: [row], files: [] });
 }
 
 export default {
@@ -172,7 +172,7 @@ export default {
                     new ButtonBuilder().setCustomId('view_backpack').setLabel('🎒 Backpack').setStyle(ButtonStyle.Secondary)
                 );
 
-                await interaction.editReply({ embeds: [embed], components: [row] });
+                await interaction.editReply({ embeds: [embed], components: [row], files: [] });
             } else if (interaction.customId === 'next_node') {
                 if (!session) return await interaction.editReply({ content: "This adventure has ended.", components: [] });
                 if (session.ended) {
