@@ -8,10 +8,30 @@ const __dirname = path.dirname(__filename);
 const nodesPath = path.join(__dirname, '../data/nodes.json');
 const nodes = JSON.parse(fs.readFileSync(nodesPath, 'utf8'));
 
+const interactiveNodes = nodes.filter(n => n.type === 'INTERACTIVE');
+const nonInteractiveNodes = nodes.filter(n => n.type === 'NON_INTERACTIVE');
+
 const sessions = new Map();
 
 function createSession(userId) {
     db.getUser(userId);
+
+    const interactiveCount = Math.floor(Math.random() * 5) + 8; // 8-12
+    const nonInteractiveCount = 20 - interactiveCount;
+
+    const sessionNodes = [];
+
+    // Get random interactive nodes
+    const interactiveShuffled = [...interactiveNodes].sort(() => 0.5 - Math.random());
+    sessionNodes.push(...interactiveShuffled.slice(0, interactiveCount));
+
+    // Get random non-interactive nodes
+    const nonInteractiveShuffled = [...nonInteractiveNodes].sort(() => 0.5 - Math.random());
+    sessionNodes.push(...nonInteractiveShuffled.slice(0, nonInteractiveCount));
+
+    // Shuffle the final list of nodes
+    sessionNodes.sort(() => 0.5 - Math.random());
+
     const session = {
         userId,
         progress: 0,
@@ -21,7 +41,7 @@ function createSession(userId) {
         },
         lostItems: [],
         ended: false,
-        nodes: [...nodes].sort(() => Math.random() - 0.5).slice(0, 20),
+        nodes: sessionNodes,
     };
     sessions.set(userId, session);
     return session;

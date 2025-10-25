@@ -37,7 +37,7 @@ async function showAdventureSummary(interaction, session) {
     const embed = new EmbedBuilder()
         .setTitle('Adventure Complete!')
         .setDescription(
-            '**The Haunting of Nanur Bari**\n\n' +
+            '**Name:**\nThe Haunting of Nanur Bari\n\n' +
             `**Interactions**\n${session.progress + 1}\n\n` +
             `**Backpack**\n${backpack}\n\n` +
             `**Lost Items**\n${lostItems}`
