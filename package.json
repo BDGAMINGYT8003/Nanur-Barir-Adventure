@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/BDGAMINGYT8003/Nanur-Barir-Adventure#readme",
   "dependencies": {
-    "discord.js": "^14.24.0"
+    "better-sqlite3": "^12.4.1",
+    "chalk": "^5.6.2",
+    "discord.js": "^14.24.0",
+    "dotenv": "^17.2.3"
   }
 }

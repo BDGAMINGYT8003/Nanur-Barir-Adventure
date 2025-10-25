@@ -1,43 +1,21 @@
+import db from './database.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import nodes from '../data/nodes.json' assert { type: "json" };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const inventoriesPath = path.join(__dirname, '../data/inventories.json');
+const nodesPath = path.join(__dirname, '../data/nodes.json');
+const nodes = JSON.parse(fs.readFileSync(nodesPath, 'utf8'));
 
 const sessions = new Map();
 
-function loadInventories() {
-    try {
-        const data = fs.readFileSync(inventoriesPath, 'utf8');
-        return JSON.parse(data);
-    } catch (error) {
-        return {};
-    }
-}
-
-function saveInventories(inventories) {
-    fs.writeFileSync(inventoriesPath, JSON.stringify(inventories, null, 4));
-}
-
-function updateUserInventory(userId, inventory) {
-    const inventories = loadInventories();
-    inventories[userId] = inventory;
-    saveInventories(inventories);
-}
-
-function getUserInventory(userId) {
-    const inventories = loadInventories();
-    return inventories[userId] || [];
-}
-
 function createSession(userId) {
+    db.getUser(userId);
     const session = {
         userId,
         progress: 0,
-        inventory: getUserInventory(userId),
+        inventory: db.getUserInventory(userId).map(i => `${i.item} (x${i.quantity})`),
         nodes: [...nodes].sort(() => Math.random() - 0.5).slice(0, 20),
     };
     sessions.set(userId, session);
@@ -61,11 +39,7 @@ function advanceSession(userId) {
 }
 
 function endSession(userId) {
-    const session = getSession(userId);
-    if (session) {
-        updateUserInventory(userId, session.inventory);
-        sessions.delete(userId);
-    }
+    sessions.delete(userId);
 }
 
 function getCurrentNode(userId) {
@@ -74,4 +48,4 @@ function getCurrentNode(userId) {
     return session.nodes[session.progress];
 }
 
-export { createSession, getSession, advanceSession, endSession, getCurrentNode, updateUserInventory, getUserInventory };
+export { createSession, getSession, advanceSession, endSession, getCurrentNode };
