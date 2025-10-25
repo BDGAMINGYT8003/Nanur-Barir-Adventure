@@ -156,7 +156,7 @@
         "options": [
             { "action": "Read it", "outcomes": [
                 { "type": "REWARD", "flavor": "The last page describes a hidden lantern that supposedly reveals things unseen by the naked eye. Following the cryptic instructions, you find it tucked away in the back of an old closet.", "item": "Ghostly Lantern", "quantity": 1, "chance": 15 },
-                { "type": "ITEM_LOSS", "flavor": "The pages are stuck together with some weird, sticky goo that smells faintly of river mud and decay. You get it all over your hands and accidentally drop your wallet while trying to clean them.", "item": "Wallet", "quantity": 1, "chance": 40 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "The pages are stuck together with some weird, sticky goo that smells faintly of river mud and decay. You get it all over your hands and accidentally drop one of your items while trying to clean them.", "chance": 40 },
                 { "type": "NOTHING", "flavor": "It's mostly boring farm stuff about crops and weather, but one of the last pages just has the same two words written over and over again, covering the entire page: 'IT SEES YOU.'", "chance": 45 }
             ]},
             { "action": "Leave it", "outcomes": [
@@ -173,7 +173,7 @@
         "options": [
             { "action": "Agree to the flight", "outcomes": [
                 { "type": "REWARD", "flavor": "The drone captures a blurry image of a massive, pale creature moving between the trees. A paranormal investigation magazine sees your post online and pays you handsomely for the exclusive rights to the picture.", "amount": 50000, "chance": 15 },
-                { "type": "ITEM_LOSS", "flavor": "Just as the drone reaches the center of the jungle, a huge, owl-like creature attacks it from above. The drone crashes and is lost in the dense undergrowth forever, taking its spooky footage with it.", "item": "Drone", "quantity": 1, "chance": 40 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "Just as the drone reaches the center of the jungle, a huge, owl-like creature attacks it from above, causing it to crash. In the ensuing panic, you drop one of your items and it's lost in the dense undergrowth.", "chance": 40 },
                 { "type": "ADVENTURE_ENDS", "flavor": "The drone's camera feed shows a pale, eyeless face looking right up at it from the darkness. The feed immediately cuts to static. An hour later, something heavy begins scratching at your bedroom door.", "chance": 45 }
             ]},
             { "action": "Refuse to participate", "outcomes": [
@@ -207,7 +207,7 @@
                 { "type": "NOTHING", "flavor": "You convince yourself it's just a new, exotic spice Mamanir is trying out. You feel perfectly fine after dinner... for now, at least.", "chance": 75 }
             ]},
             { "action": "Feed it to the cat", "outcomes": [
-                { "type": "ITEM_LOSS", "flavor": "The stray cat that wanders the property takes one sniff of the curry, hisses violently at the bowl, and claws up your backpack in a frenzy before running away into the night.", "item": "Backpack", "quantity": 1, "chance": 100 }
+                { "type": "ITEM_LOSS_ONE", "flavor": "The stray cat that wanders the property takes one sniff of the curry, hisses violently at the bowl, and claws one of your items to shreds in a frenzy before running away into the night.", "chance": 100 }
             ]}
         ]
     },

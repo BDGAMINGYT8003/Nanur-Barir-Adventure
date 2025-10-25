@@ -145,19 +145,37 @@ export default {
                             description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
                         }
                         break;
+                    case 'ITEM_LOSS_ONE':
+                        if (session.inventory.length > 0) {
+                            const randomIndex = Math.floor(Math.random() * session.inventory.length);
+                            const lostItem = session.inventory.splice(randomIndex, 1)[0];
+                            session.lostItems.push(lostItem);
+                            description += `\n\n- You lost your ${itemData[lostItem.item] || '📦'} ${lostItem.item}`;
+                        } else {
+                            description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
+                        }
+                        break;
                     case 'ITEM_LOSS_ALL':
-                        session.lostItems.push(...session.inventory);
-                        session.inventory = [];
-                        description += `\n\n- You lost all items in your backpack.`;
+                        if (session.inventory.length > 0) {
+                            session.lostItems.push(...session.inventory);
+                            session.inventory = [];
+                            description += `\n\n- You lost all items in your backpack.`;
+                        } else {
+                            description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
+                        }
                         break;
                     case 'NOTHING':
                         description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
                         break;
                     case 'DESTROYED':
-                        session.lostItems.push(...session.inventory);
-                        session.inventory = [];
-                        session.rewards.coins = 0;
-                        description += `\n\n- You lost all items in your backpack, all your rewards, and your adventure has ended.`;
+                        if (session.inventory.length > 0 || session.rewards.coins > 0) {
+                            session.lostItems.push(...session.inventory);
+                            session.inventory = [];
+                            session.rewards.coins = 0;
+                            description += `\n\n- You lost all items in your backpack, all your rewards, and your adventure has ended.`;
+                        } else {
+                            description += `\n\n- Your adventure has ended.`;
+                        }
                         session.ended = true;
                         break;
                     case 'ADVENTURE_ENDS':
