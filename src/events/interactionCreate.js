@@ -16,10 +16,14 @@ async function showAdventureSummary(interaction, session) {
     const image = new AttachmentBuilder('assets/spooky.png');
     let backpack = '';
     if (session.rewards.coins > 0) {
+        db.updateUserWallet(session.userId, session.rewards.coins);
         backpack += `- ⏣ ${session.rewards.coins.toLocaleString()}\n`;
     }
     if (session.inventory.length > 0) {
-        backpack += `- ${session.inventory.map(i => `${i.quantity} ${itemData[i.item] || '📦'} ${i.item}`).join('\n- ')}`;
+        for (const item of session.inventory) {
+            db.updateUserInventory(session.userId, item.item, item.quantity);
+            backpack += `- ${item.quantity} ${itemData[item.item] || '📦'} ${item.item}\n`;
+        }
     }
     if (backpack === '') {
         backpack = 'Nothing!';
@@ -171,12 +175,23 @@ export default {
                 await interaction.editReply({ embeds: [embed], components: [row] });
             } else if (interaction.customId === 'next_node') {
                 if (!session) return await interaction.editReply({ content: "This adventure has ended.", components: [] });
+                if (session.ended) {
+                    await showAdventureSummary(interaction, session);
+                    return;
+                }
                 advanceSession(interaction.user.id);
                 await handleAdventureNode(interaction, session);
             } else if (interaction.customId === 'view_backpack') {
                 if (!session) return await interaction.followUp({ content: "This adventure has ended.", ephemeral: true });
-                const backpackList = session.inventory.length > 0 ? session.inventory.map(i => `${itemData[i.item] || '📦'} ${i.item} (x${i.quantity})`).join('\n') : "You have no items in your backpack.";
-                await interaction.followUp({ content: `**Backpack:**\n${backpackList}`, ephemeral: true });
+                const backpackList = session.inventory.length > 0 ? session.inventory.map(i => `**${itemData[i.item] || '📦'} ${i.item}** ─ ${i.quantity}`).join('\n') : "You have no items in your backpack.";
+                const embed = new EmbedBuilder()
+                    .setTitle(`${interaction.user.username}'s Backpack`)
+                    .setThumbnail(interaction.user.displayAvatarURL())
+                    .setDescription(backpackList)
+                    .setColor(5793266)
+                    .setTimestamp()
+                    .setFooter({ text: "Items collected in this adventure." });
+                await interaction.followUp({ embeds: [embed], ephemeral: true });
             } else if (interaction.customId.startsWith('inventory_')) {
                 const [action, userId, pageStr] = interaction.customId.split('_').slice(1);
                 let page = parseInt(pageStr);
