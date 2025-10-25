@@ -17,7 +17,7 @@ async function showAdventureSummary(interaction, session) {
     let backpack = '';
     if (session.rewards.coins > 0) {
         db.updateUserWallet(session.userId, session.rewards.coins);
-        backpack += `- ⏣ ${session.rewards.coins.toLocaleString()}\n`;
+        backpack += `- <:Coins:1431696484088156190> ${session.rewards.coins.toLocaleString()}\n`;
     }
     if (session.inventory.length > 0) {
         for (const item of session.inventory) {
@@ -132,7 +132,7 @@ export default {
                             description += `\n\n- ${outcome.quantity} ${itemData[outcome.item] || '📦'} ${outcome.item}`;
                         } else if (outcome.amount) {
                             session.rewards.coins += outcome.amount;
-                            description += `\n\n- ⏣ ${outcome.amount.toLocaleString()}`;
+                            description += `\n\n- <:Coins:1431696484088156190> ${outcome.amount.toLocaleString()}`;
                         }
                         break;
                     case 'ITEM_LOSS_ONE':

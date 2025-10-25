@@ -26,9 +26,9 @@ export default {
             .setTitle(`${user.username}'s Balance`)
             .setThumbnail(user.displayAvatarURL())
             .setDescription(
-                `<:Coin:1105833876032606350> **Wallet:** ${userData.wallet.toLocaleString()}\n` +
-                `<:Bank:1070046716096688218> **Bank:** ${userData.bank.toLocaleString()} / ${userData.bank_capacity.toLocaleString()}\n` +
-                `<:TotalNetWorth:1105833876032606350> **Net Worth:** ${netWorth.toLocaleString()}`
+                `<:Coins:1431696484088156190> **Wallet:** ${userData.wallet.toLocaleString()}\n` +
+                `🏦 **Bank:** ${userData.bank.toLocaleString()} / ${userData.bank_capacity.toLocaleString()}\n` +
+                `💰 **Net Worth:** ${netWorth.toLocaleString()}`
             )
             .setColor(5793266)
             .setTimestamp()

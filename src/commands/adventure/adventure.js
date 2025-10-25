@@ -20,7 +20,7 @@ export default {
                 '**The Haunting of Nanur Bari**\n' +
                 'Depart with Moin, Oli, and Fakhruddin into a world filled with rural frights and family secrets!\n\n' +
                 '**Possible Rewards**\n' +
-                '<:GhostlyLantern:12345> <:HauntedRing:12345> <:AncientCoin:12345> <:Lifesaver:12345> <:CandyCorn:12345> <:Coin:1105833876032606350>'
+                '<:GhostlyLantern:1431694741313032284> <:HauntedRing:1431695057874063614> <:AncientCoin:1431695460808265780> <:Lifesaver:1431695902602432613> <:RareItem:1431696481080840212> <:Coins:1431696484088156190>'
             )
             .setImage('attachment://spooky.png')
             .setFooter({ text: `Fun Fact: ${funFacts[Math.floor(Math.random() * funFacts.length)]}` });
