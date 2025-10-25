@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits, Collection, REST, Routes } from 'discord.js';
+import { Client, GatewayIntentBits, Collection } from 'discord.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -36,21 +36,6 @@ for (const folder of commandFolders) {
     }
 }
 
-const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_BOT_TOKEN);
-
-(async () => {
-    try {
-        logger.info(`Started refreshing ${commands.length} application (/) commands.`);
-        const data = await rest.put(
-            Routes.applicationCommands(process.env.CLIENT_ID),
-            { body: commands },
-        );
-        logger.success(`Successfully reloaded ${data.length} application (/) commands.`);
-    } catch (error) {
-        logger.error(error);
-    }
-})();
-
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
@@ -58,7 +43,7 @@ for (const file of eventFiles) {
     const filePath = path.join(eventsPath, file);
     const { default: event } = await import(filePath);
     if (event.once) {
-        client.once(event.name, (...args) => event.execute(...args));
+        client.once(event.name, (...args) => event.execute(...args, commands));
     } else {
         client.on(event.name, (...args) => event.execute(...args));
     }
