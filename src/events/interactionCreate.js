@@ -135,16 +135,6 @@ export default {
                             description += `\n\n- ⏣ ${outcome.amount.toLocaleString()}`;
                         }
                         break;
-                    case 'ITEM_LOSS':
-                        const itemIndex = session.inventory.findIndex(i => i.item === outcome.item);
-                        if (itemIndex > -1) {
-                            const lostItem = session.inventory.splice(itemIndex, 1)[0];
-                            session.lostItems.push(lostItem);
-                            description += `\n\n- You lost your ${itemData[outcome.item] || '📦'} ${outcome.item}`;
-                        } else {
-                            description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
-                        }
-                        break;
                     case 'ITEM_LOSS_ONE':
                         if (session.inventory.length > 0) {
                             const randomIndex = Math.floor(Math.random() * session.inventory.length);
