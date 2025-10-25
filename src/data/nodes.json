@@ -251,7 +251,7 @@
             ]},
             { "action": "Decline the dare", "outcomes": [
                 { "type": "NOTHING", "flavor": "Fakhruddin calls you a chicken, but you don't care. You're a dry, safe chicken, and you have a feeling that something ancient and hungry lives in that pond.", "chance": 60 },
-                { "type": "ITEM_LOSS", "flavor": "As you back away from the pond, you trip over a root and your phone flies out of your pocket, landing in the water with a soft 'plop'.", "item": "Phone", "quantity": 1, "chance": 40 }
+                { "type": "ITEM_LOSS_ONE", "flavor": "As you back away from the pond, you trip over a root and one of your items flies out of your pocket, landing in the water with a soft 'plop'.", "chance": 40 }
             ]}
         ]
     },
@@ -291,7 +291,7 @@
         "options": [
             { "action": "Jump out and scream", "outcomes": [
                 { "type": "NOTHING", "flavor": "He lets out a scream that sounds like a terrified goat and throws a bag of rice at you in a panic. It's absolutely hilarious, and you all laugh about it for the rest of the night.", "chance": 60 },
-                { "type": "ITEM_LOSS", "flavor": "He's so startled he drops the glass jar of pickles he was holding. It shatters everywhere. You spend the next hour cleaning up the sticky mess while he steals your snacks as 'payment for emotional distress.'", "item": "Snacks", "quantity": 1, "chance": 40 }
+                { "type": "ITEM_LOSS_ONE", "flavor": "He's so startled he drops a glass jar of pickles he was holding. It shatters everywhere. You spend the next hour cleaning up the sticky mess and in the chaos, one of your items goes missing.", "chance": 40 }
             ]},
             { "action": "Stay hidden and wait", "outcomes": [
                 { "type": "NOTHING", "flavor": "He opens the door, grabs a packet of biscuits without even turning on the light, and leaves, completely oblivious to your presence. Your epic prank is a total failure.", "chance": 80 },
@@ -309,7 +309,7 @@
                 { "type": "ADVENTURE_ENDS", "flavor": "As you step into the center of the symbol, you realize it's a trap. The ground gives way beneath you, and you fall into a deep, dark pit from which there is no escape.", "chance": 75 }
             ]},
             { "action": "Delete the disturbing footage", "outcomes": [
-                { "type": "ITEM_LOSS", "flavor": "You delete the creepy video, but the spooky image of the symbol is now permanently burned into your phone's screen. It's always faintly visible, and it seems to drain your battery life twice as fast.", "item": "Phone", "quantity": 1, "chance": 100 }
+                { "type": "ITEM_LOSS_ONE", "flavor": "You delete the creepy video, but as you do, your device sputters and shorts out, causing you to drop it and lose one of your items in the process.", "chance": 100 }
             ]}
         ]
     },
@@ -390,7 +390,7 @@
         "options": [
             { "action": "Take the shawl", "outcomes": [
                 { "type": "REWARD", "flavor": "As you pull the shawl free from the thorns, a deep, overwhelming wave of sorrow washes over you. You clutch the cold fabric, and the feeling of sadness doesn't leave.", "item": "Cursed Shawl", "quantity": 1, "chance": 25 },
-                { "type": "ITEM_LOSS", "flavor": "You get your arm and your bag tangled in the thorny bush while trying to free the shawl. By the time you get it loose, your clothes are torn and your bag has a huge rip in it.", "item": "Backpack", "quantity": 1, "chance": 75 }
+                { "type": "ITEM_LOSS_ONE", "flavor": "You get your arm tangled in the thorny bush while trying to free the shawl. In the struggle, you drop one of your items, and it's lost among the thorns.", "chance": 75 }
             ]},
             { "action": "Leave the shawl alone", "outcomes": [
                 { "type": "NOTHING", "flavor": "You carefully back away from the creepy shawl. You have a strong feeling that it belongs to something you really don't want to meet, and that taking it would be a very bad idea.", "chance": 60 },
@@ -503,7 +503,7 @@
         "options": [
             { "action": "Pay the snake charmer", "outcomes": [
                 { "type": "REWARD", "flavor": "You pay the man, and he begins to play. The snake slithers out of its basket and leads you to a spot near the pond. You dig where it stops and find a small, buried chest filled with antique jewelry!", "item": "Rare Item", "quantity": 1, "chance": 20 },
-                { "type": "ITEM_LOSS", "flavor": "You pay the man, but his snake just slithers in a circle a few times before going back into its basket to take a nap. The snake charmer just shrugs and pockets your money. You've been scammed.", "item": "Coins", "quantity": 1, "chance": 80 }
+                { "type": "ITEM_LOSS_ONE", "flavor": "You pay the man, but his snake just slithers in a circle a few times before going back into its basket to take a nap. While you're distracted, a pickpocket nabs one of your items.", "chance": 80 }
             ]},
             { "action": "Decline his offer", "outcomes": [
                 { "type": "NOTHING", "flavor": "You politely decline the snake charmer's offer. It seems a bit too much like a tourist trap, and you decide to save your money for something more reliable, like snacks.", "chance": 100 }
