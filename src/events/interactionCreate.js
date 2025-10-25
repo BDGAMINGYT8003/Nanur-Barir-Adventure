@@ -8,28 +8,39 @@ async function handleAdventureNode(interaction, session) {
     const node = getCurrentNode(session.userId);
 
     if (!node) {
-        const inventory = db.getUserInventory(session.userId);
-        const inventoryList = inventory.map(i => `${itemData[i.item] || '📦'} ${i.item} (x${i.quantity})`).join('\n- ');
-        const embed = new EmbedBuilder()
-            .setTitle('Adventure Ended!')
-            .setDescription(`You have completed your adventure. Here is what you found:\n- ${inventoryList}`)
-            .setColor('#ff0000');
+        // This is where the adventure ends successfully
+        let finalDescription = 'You have completed your adventure. All rewards have been saved to your inventory!\n\n**You received:**\n';
+        if (session.inventory.length === 0 && session.rewards.coins === 0) {
+            finalDescription = 'You have completed your adventure, but you did not find anything.';
+        } else {
+            if (session.rewards.coins > 0) {
+                db.updateUserWallet(session.userId, session.rewards.coins);
+                finalDescription += `- ⏣ ${session.rewards.coins.toLocaleString()}\n`;
+            }
+            for (const item of session.inventory) {
+                db.updateUserInventory(session.userId, item.item, item.quantity);
+                finalDescription += `- ${item.quantity} ${itemData[item.item] || '📦'} ${item.item}\n`;
+            }
+        }
+
+        const embed = new EmbedBuilder().setTitle('Adventure Ended!').setDescription(finalDescription).setColor('#ff0000');
         await interaction.editReply({ embeds: [embed], components: [] });
         endSession(session.userId);
         return;
     }
 
-    const embed = new EmbedBuilder()
-        .setTitle('An Adventure!')
-        .setDescription(node.scenario)
-        .setColor('#0099ff');
-
-    const row = new ActionRowBuilder();
+    let description = node.scenario;
     if (node.type === 'NON_INTERACTIVE') {
-        embed.setDescription(`${node.scenario}\n- ${node.options[0].outcomes[0].flavor}`);
+        description += `\n\n- ${node.options[0].outcomes[0].flavor}`;
+    }
+
+    const embed = new EmbedBuilder().setTitle('An Adventure!').setDescription(description).setColor('#0099ff');
+    const row = new ActionRowBuilder();
+
+    if (node.type === 'NON_INTERACTIVE') {
         row.addComponents(
             new ButtonBuilder().setCustomId('next_node').setLabel('Next →').setStyle(ButtonStyle.Success),
-            new ButtonBuilder().setCustomId('view_inventory').setLabel('🎒 Inventory').setStyle(ButtonStyle.Secondary)
+            new ButtonBuilder().setCustomId('view_backpack').setLabel('🎒 Backpack').setStyle(ButtonStyle.Secondary)
         );
     } else {
         node.options.forEach((option, index) => {
@@ -79,60 +90,66 @@ export default {
                     }
                 }
 
-                let description = `${node.scenario}\n\n**You chose: \`${option.action}\`**\n${outcome.flavor}\n\n`;
+                let description = `${node.scenario}\n\n**You chose: \`${option.action}\`**\n${outcome.flavor}`;
 
                 switch (outcome.type) {
                     case 'REWARD':
                         if (outcome.item) {
-                            db.updateUserInventory(session.userId, outcome.item, outcome.quantity);
-                            description += `- ${outcome.quantity} ${itemData[outcome.item] || '📦'} ${outcome.item}`;
+                            session.inventory.push({ item: outcome.item, quantity: outcome.quantity });
+                            description += `\n\n- ${outcome.quantity} ${itemData[outcome.item] || '📦'} ${outcome.item}`;
                         } else if (outcome.amount) {
-                            db.updateUserWallet(session.userId, outcome.amount);
-                            description += `- ⏣ ${outcome.amount.toLocaleString()}`;
+                            session.rewards.coins += outcome.amount;
+                            description += `\n\n- ⏣ ${outcome.amount.toLocaleString()}`;
                         }
                         break;
                     case 'ITEM_LOSS':
-                        db.removeUserItem(session.userId, outcome.item, outcome.quantity);
-                        description += `- You lost your ${itemData[outcome.item] || '📦'} ${outcome.item}`;
+                        const itemIndex = session.inventory.findIndex(i => i.item === outcome.item);
+                        if (itemIndex > -1) {
+                            session.inventory.splice(itemIndex, 1);
+                            description += `\n\n- You lost your ${itemData[outcome.item] || '📦'} ${outcome.item}`;
+                        } else {
+                            description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
+                        }
                         break;
                     case 'ITEM_LOSS_ALL':
-                        db.clearUserInventory(session.userId);
-                        description += `- You lost all items in your backpack.`;
+                        session.inventory = [];
+                        description += `\n\n- You lost all items in your backpack.`;
                         break;
                     case 'NOTHING':
-                        description += `- Despite the intrigue, your situation remains unaffected.`;
+                        description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
                         break;
                     case 'DESTROYED':
-                        db.clearUserInventory(session.userId);
-                        description += `- You lost all items in your backpack, all your rewards, and your adventure has ended.`;
+                        session.inventory = [];
+                        session.rewards.coins = 0;
+                        description += `\n\n- You lost all items in your backpack, all your rewards, and your adventure has ended.`;
                         endSession(session.userId);
                         break;
                     case 'ADVENTURE_ENDS':
-                        description += `- Your adventure has ended.`;
+                        description += `\n\n- Your adventure has ended.`;
                         endSession(session.userId);
                         break;
                 }
 
                 const embed = new EmbedBuilder().setTitle('An Adventure!').setDescription(description).setColor('#0099ff');
-                const row = new ActionRowBuilder();
+                const components = [];
 
                 if (outcome.type !== 'DESTROYED' && outcome.type !== 'ADVENTURE_ENDS') {
-                    row.addComponents(
+                    const row = new ActionRowBuilder().addComponents(
                         new ButtonBuilder().setCustomId('next_node').setLabel('Next →').setStyle(ButtonStyle.Success),
-                        new ButtonBuilder().setCustomId('view_inventory').setLabel('🎒 Inventory').setStyle(ButtonStyle.Secondary)
+                        new ButtonBuilder().setCustomId('view_backpack').setLabel('🎒 Backpack').setStyle(ButtonStyle.Secondary)
                     );
+                    components.push(row);
                 }
 
-                await interaction.editReply({ embeds: [embed], components: [row] });
+                await interaction.editReply({ embeds: [embed], components });
             } else if (interaction.customId === 'next_node') {
                 if (!session) return await interaction.editReply({ content: "This adventure has ended.", components: [] });
                 advanceSession(interaction.user.id);
                 await handleAdventureNode(interaction, session);
-            } else if (interaction.customId === 'view_inventory') {
+            } else if (interaction.customId === 'view_backpack') {
                 if (!session) return await interaction.followUp({ content: "This adventure has ended.", ephemeral: true });
-                const inventory = db.getUserInventory(session.userId);
-                const inventoryList = inventory.length > 0 ? inventory.map(i => `${itemData[i.item] || '📦'} ${i.item} (x${i.quantity})`).join('\n') : "You have no items.";
-                await interaction.followUp({ content: `**Inventory:**\n${inventoryList}`, ephemeral: true });
+                const backpackList = session.inventory.length > 0 ? session.inventory.map(i => `${itemData[i.item] || '📦'} ${i.item} (x${i.quantity})`).join('\n') : "You have no items in your backpack.";
+                await interaction.followUp({ content: `**Backpack:**\n${backpackList}`, ephemeral: true });
             } else if (interaction.customId.startsWith('inventory_')) {
                 const [action, userId, pageStr] = interaction.customId.split('_').slice(1);
                 let page = parseInt(pageStr);

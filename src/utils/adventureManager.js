@@ -15,7 +15,10 @@ function createSession(userId) {
     const session = {
         userId,
         progress: 0,
-        inventory: db.getUserInventory(userId).map(i => `${i.item} (x${i.quantity})`),
+        inventory: [],
+        rewards: {
+            coins: 0,
+        },
         nodes: [...nodes].sort(() => Math.random() - 0.5).slice(0, 20),
     };
     sessions.set(userId, session);
@@ -32,7 +35,6 @@ function advanceSession(userId) {
 
     session.progress++;
     if (session.progress >= session.nodes.length) {
-        endSession(userId);
         return null;
     }
     return session;
