@@ -13,4 +13,12 @@ export const items = {
     "Lifesaver": "<:Lifesaver:123456789012345678>",
     "Energy Drink": "<:EnergyDrink:123456789012345678>",
     "Padlock": "<:Padlock:123456789012345678>",
+    "Wallet": "<:Wallet:123456789012345678>",
+    "Drone": "<:Drone:123456789012345678>",
+    "Backpack": "<:Backpack:123456789012345678>",
+    "Snacks": "<:Snacks:123456789012345678>",
+    "Phone": "<:Phone:123456789012345678>",
+    "Ancient Scroll": "<:AncientScroll:123456789012345678>",
+    "Rare Item": "<:RareItem:123456789012345678>",
+    "Coins": "<:Coins:123456789012345678>",
 };

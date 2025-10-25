@@ -62,8 +62,19 @@ function updateUserInventory(id, item, quantity) {
     }
 }
 
+function removeUserItem(id, item, quantity) {
+    const existingItem = db.prepare('SELECT * FROM inventories WHERE user_id = ? AND item = ?').get(id, item);
+    if (existingItem) {
+        if (existingItem.quantity > quantity) {
+            db.prepare('UPDATE inventories SET quantity = quantity - ? WHERE user_id = ? AND item = ?').run(quantity, id, item);
+        } else {
+            db.prepare('DELETE FROM inventories WHERE user_id = ? AND item = ?').run(id, item);
+        }
+    }
+}
+
 function clearUserInventory(id) {
     db.prepare('DELETE FROM inventories WHERE user_id = ?').run(id);
 }
 
-export default { getUser, updateUserWallet, getUserInventory, updateUserInventory, clearUserInventory };
+export default { getUser, updateUserWallet, getUserInventory, updateUserInventory, removeUserItem, clearUserInventory };

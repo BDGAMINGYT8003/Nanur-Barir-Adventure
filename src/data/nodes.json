@@ -1,1114 +1,821 @@
 [
     {
-        "scenario": "The wind howls through Nanur Bari, carrying faint whispers that sound almost like your name.",
+        "id": 1,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The wind howls through Nanur Bari, carrying faint whispers that sound almost like your name. The rustling leaves of the ancient banyan tree seem to be trying to tell you a secret, but the message is lost in the breeze.",
         "options": [
             {
                 "action": "Next",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
                 ]
             }
         ]
     },
     {
-        "scenario": "You find an old, dusty diary under your bed. It seems to belong to your great-grandfather, full of ramblings about a 'guardian of the pond.'",
+        "id": 2,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Fakhruddin swears he saw a shadowy figure with no hands watching you all from the edge of the pond. When you all turn to look, there's nothing there but the still, dark water reflecting the moonlight.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The old swing in the garden, unused for years, starts moving on its own. It creaks back and forth rhythmically in the dead, windless air, as if an invisible child is playing on it.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You wake up in the middle of the night to the distinct sound of frantic scratching coming from inside your closet. The sound stops the moment you sit up in bed, plunging the room back into silence.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "type": "NON_INTERACTIVE",
+        "scenario": "As you're skipping stones across the pond, the water in the center turns murky and black for a moment. You think you see something large and pale flash just beneath the surface before it vanishes.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "type": "NON_INTERACTIVE",
+        "scenario": "While exploring the old house, Moin finds a tattered map tucked into a crack in the wall. It's hand-drawn and seems to show a hidden room or cellar somewhere on the Nanur Bari property.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "type": "NON_INTERACTIVE",
+        "scenario": "A chilling whisper seems to echo up from the dark, mossy well in the backyard. It sounds like a woman's voice, faintly begging for someone to help her find peace.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The tea-stall owner at the local market warns you not to go into the jungle after dusk. He speaks of a headless creature that roams the paths, and says it's been seen more frequently these past few weeks.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "type": "NON_INTERACTIVE",
+        "scenario": "While fishing in the pond, you reel in a human skull instead of a fish. Its empty eye sockets seem to glow with a faint, green light for a second before vanishing into the darkness of the skull.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Late at night, you hear the sound of a woman crying softly, coming from the direction of the old family graves at the edge of the jungle. The sobbing is filled with a deep, inconsolable sorrow.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "type": "NON_INTERACTIVE",
+        "scenario": "As you step out the door in the morning, you find a single, perfectly preserved ancient coin on the doorstep. One side has a strange, unknown crest, and the other is worn smooth.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 12,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You lean over the pond to see your reflection, but for a split second, it isn't yours. The face looking back is older, paler, and is smiling in a way that makes your blood run cold.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You notice that all the old, dust-covered clocks in the house have stopped at the exact same time: 3:13 AM. No amount of winding or new batteries seems to get them working again.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The old groundskeeper, Foysal, pulls you aside with a nervous look in his eyes. He warns you that the jungle 'demands a sacrifice' every few years to keep the restless spirits calm and dormant.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 15,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The air suddenly grows freezing cold, and you can see your breath misting in front of you. You look outside, but it's the middle of a hot, humid summer night, and the air is still.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 16,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You're flipping through an old family photo album left on the coffee table. You realize with a jolt that in every single photograph, the eyes of your ancestors have been meticulously scratched out.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 17,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You catch a glimpse of a creature at the edge of the jungle, feasting on a dead fox. It appears to have the body of a man but no head, and its neck stump gurgles wetly as it eats.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 18,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You find a small, half-eaten piece of Mamanir pitha lying on the jungle path. It's placed right next to a patch of strangely disturbed soil, as if something was recently buried there.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The trees in the jungle seem to subtly rearrange themselves when you're not looking. The path you took just minutes ago is now gone, and you feel a disorienting sense of being watched.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 20,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You find a note written in what looks like dried blood on your pillow. It has only four words written in shaky handwriting: 'He watches from the water.'",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 21,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The old man from the jungle appears before you, his hands now restored but twisted into cruel claws. He opens his mouth, and a swarm of buzzing locusts flies out, blotting out the sun.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 22,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You find a single, child's shoe floating in the middle of the pond. It's made of old leather and looks like it's been in the water for a very, very long time.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 23,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Your cousin, Najib Bhai, tells you a story about a child who vanished in the jungle 50 years ago. They say his ghost still wanders the woods, luring others to their doom with sounds of laughter.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 24,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The food Mamanir left out for you overnight is covered in thick, grey cobwebs by morning. This is strange because the container was sealed tightly, and there are no spiders in sight.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 25,
+        "type": "NON_INTERACTIVE",
+        "scenario": "All the photos on Oli's phone suddenly become corrupted, replaced with a single, distorted image. It looks like a photo taken from the inside of a coffin, looking up at a closed lid.",
+        "options": [
+            {
+                "action": "Next",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "Nothing interesting happened." }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 26,
+        "type": "INTERACTIVE",
+        "scenario": "You find an old, dusty diary under your bed, its leather cover cracked with age. The faded script on the first page suggests it belonged to your great-grandfather, and it's full of ramblings about a 'guardian of the pond.'",
         "options": [
             {
                 "action": "Read it",
                 "outcomes": [
-                    {
-                        "result": "Ghostly Lantern",
-                        "text": "The last page describes a hidden lantern that reveals unseen things. You find it tucked away in the closet.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "The pages are stuck together with some weird goo. You get it all over your hands and drop everything you're holding.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "It's mostly boring farm stuff, but one page just says 'IT SEES YOU' over and over.",
-                        "chance": 34
-                    }
+                    { "type": "REWARD", "flavor": "The last page describes a hidden lantern that supposedly reveals things unseen by the naked eye. Following the cryptic instructions, you find it tucked away in the back of an old closet.", "item": "Ghostly Lantern", "quantity": 1, "chance": 33 },
+                    { "type": "ITEM_LOSS", "flavor": "The pages are stuck together with some weird, sticky goo that smells faintly of river mud and decay. You get it all over your hands and accidentally drop your wallet while trying to clean them.", "item": "Wallet", "quantity": 1, "chance": 33 },
+                    { "type": "NOTHING", "flavor": "It's mostly boring farm stuff about crops and weather, but one of the last pages just has the same two words written over and over again, covering the entire page: 'IT SEES YOU.'", "chance": 34 }
                 ]
             },
             {
                 "action": "Leave it",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "Probably for the best. Some secrets should stay buried.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You slide the diary back under the bed, deciding that some secrets are probably best left buried. The house feels a little less menacing now that you're not actively looking for trouble.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "Oli suggests flying his new drone over the creepy jungle at midnight to see what's making those sounds.",
+        "id": 27,
+        "type": "INTERACTIVE",
+        "scenario": "Oli excitedly suggests flying his new drone over the creepy jungle at midnight. He wants to see what's making those strange howling sounds you've all been hearing after dark. Fakhruddin looks incredibly nervous about the idea.",
         "options": [
             {
-                "action": "Agree",
+                "action": "Agree to the flight",
                 "outcomes": [
-                    {
-                        "result": "⏣ 50,000",
-                        "text": "The drone captures a blurry image of something massive moving between the trees. A paranormal magazine pays you for the pic.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "A huge bird attacks the drone mid-flight, causing it to crash and get lost in the jungle forever.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Adventure Ends",
-                        "text": "The drone's camera feed shows a pale face looking right at it, then the feed cuts out. An hour later, something scratches at your door.",
-                        "chance": 34
-                    }
+                    { "type": "REWARD", "flavor": "The drone captures a blurry image of a massive, pale creature moving between the trees. A paranormal investigation magazine sees your post online and pays you handsomely for the exclusive rights to the picture.", "amount": 50000, "chance": 33 },
+                    { "type": "ITEM_LOSS", "flavor": "Just as the drone reaches the center of the jungle, a huge, owl-like creature attacks it from above. The drone crashes and is lost in the dense undergrowth forever, taking its spooky footage with it.", "item": "Drone", "quantity": 1, "chance": 33 },
+                    { "type": "ADVENTURE_ENDS", "flavor": "The drone's camera feed shows a pale, eyeless face looking right up at it from the darkness. The feed immediately cuts to static. An hour later, something heavy begins scratching at your bedroom door.", "chance": 34 }
                 ]
             },
             {
-                "action": "Refuse",
+                "action": "Refuse to participate",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You all decide to watch a movie instead. It's probably safer.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You all decide to stay inside and watch a movie instead, much to Fakhruddin's relief. The howling from the jungle seems louder tonight, and you feel like you made the right choice.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "Fakhruddin swears he saw a shadowy figure with no hands watching you from the edge of the pond.",
+        "id": 28,
+        "type": "INTERACTIVE",
+        "scenario": "You find a loose floorboard in the main bedroom that creaks whenever you step on it. Prying it open with your fingers, you reveal a small, locked metal box that's cold to the touch.",
         "options": [
             {
-                "action": "Next",
+                "action": "Smash the box open",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "You find a loose floorboard in the bedroom. Prying it open reveals a small, locked metal box.",
-        "options": [
-            {
-                "action": "Smash it open",
-                "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "The box releases a cloud of black dust. You inhale it and collapse, your adventure is over.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Haunted Ring",
-                        "text": "Inside is a silver ring that feels unnaturally cold to the touch.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "You use a rock to smash it, but it slips and breaks your phone screen instead. The box remains locked.",
-                        "chance": 34
-                    }
+                    { "type": "DESTROYED", "flavor": "You hit the lock with a heavy candlestick, and the box springs open, releasing a cloud of black dust. You accidentally inhale some of it and collapse, your vision fading to black.", "chance": 50 },
+                    { "type": "REWARD", "flavor": "With a final, solid whack, the lock breaks. Inside, nestled on a bed of faded velvet, is a tarnished silver ring that feels unnaturally cold and heavy in your palm.", "item": "Haunted Ring", "quantity": 1, "chance": 50 }
                 ]
             },
             {
-                "action": "Leave it",
+                "action": "Leave the box alone",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You slide the floorboard back. Whatever is in there can stay in there.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You carefully slide the floorboard back into place, deciding that some things are better left undisturbed. Whatever secrets that box holds can remain secrets for now.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "Mamanir cooking smells divine, but tonight the fish curry has a strange, earthy taste, almost like dirt.",
+        "id": 29,
+        "type": "INTERACTIVE",
+        "scenario": "Mamanir cooking smells divine as always, but tonight the fish curry has a strange, earthy taste you can't quite place. It's almost like the faint taste of dirt or river mud.",
         "options": [
             {
-                "action": "Eat it",
+                "action": "Eat it anyway",
                 "outcomes": [
-                    {
-                        "result": "2x Lifesaver",
-                        "text": "It tastes weird, but you feel surprisingly invigorated, like you just cheated death.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You convince yourself it's just a new spice. You feel fine... for now.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "It tastes weird, but after a few bites you feel surprisingly invigorated, as if your life force has been replenished. You feel like you could survive almost anything now.", "item": "Lifesaver", "quantity": 2, "chance": 50 },
+                    { "type": "NOTHING", "flavor": "You convince yourself it's just a new, exotic spice Mamanir is trying out. You feel perfectly fine after dinner... for now, at least.", "chance": 50 }
                 ]
             },
             {
                 "action": "Feed it to the cat",
                 "outcomes": [
-                    {
-                        "result": "Lose your items",
-                        "text": "The cat takes one sniff, hisses at you, and claws up your backpack before running away.",
-                        "chance": 100
-                    }
+                    { "type": "ITEM_LOSS", "flavor": "The stray cat that wanders the property takes one sniff of the curry, hisses violently at the bowl, and claws up your backpack in a frenzy before running away into the night.", "item": "Backpack", "quantity": 1, "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "The old swing in the garden starts moving on its own, creaking rhythmically in the dead air.",
+        "id": 30,
+        "type": "INTERACTIVE",
+        "scenario": "While walking near the old graveyard, you find a small, crudely carved wooden doll half-buried in the dirt. It's unsettling how much its button eyes and yarn hair vaguely resemble Fakhruddin.",
         "options": [
             {
-                "action": "Next",
+                "action": "Keep the doll",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "While walking near the graveyard, you find a small, crudely carved wooden doll that looks vaguely like Fakhruddin.",
-        "options": [
-            {
-                "action": "Keep it",
-                "outcomes": [
-                    {
-                        "result": "Voodoo Doll",
-                        "text": "You pocket the doll. Fakhruddin immediately complains about a sharp pain in his back.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "The doll feels hot in your hand and you drop it, along with your wallet which rolls into a ditch.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "You pocket the creepy-looking doll. A few moments later, Fakhruddin loudly complains about a sudden, sharp pain in his back, right between his shoulder blades.", "item": "Voodoo Doll", "quantity": 1, "chance": 100 }
                 ]
             },
             {
-                "action": "Bury it again",
+                "action": "Bury the doll again",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You dig a small hole and put it back. You feel a sense of relief.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You feel a chill run down your spine as you dig a small hole and place the doll back in the earth. As soon as it's covered, you feel a strange sense of relief wash over you.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "A sudden power cut plunges the entire house into darkness. Oli nervously jokes that the Jin is here.",
+        "id": 31,
+        "type": "INTERACTIVE",
+        "scenario": "A sudden power cut plunges the entire ancestral home into absolute darkness. Oli nervously jokes that a Jinn must have tripped over the power lines, but his laughter sounds strained and fearful.",
         "options": [
             {
                 "action": "Light a candle",
                 "outcomes": [
-                    {
-                        "result": "Ghostly Lantern",
-                        "text": "You find an old lantern. When you light it, the flame burns a sickly green, revealing strange symbols on the walls.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You find some matches and a candle. The flickering light makes everything look ten times creepier.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "You find an old lantern in a cupboard. When you light it, the flame burns a sickly, unnatural green. In its eerie light, you can see strange, previously invisible symbols painted all over the walls.", "item": "Ghostly Lantern", "quantity": 1, "chance": 100 }
                 ]
             },
             {
-                "action": "Huddle in the dark",
+                "action": "Huddle together in the dark",
                 "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "You hear footsteps approaching. It's not one of your friends.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "You stumble around in the dark and knock over a vase. Mamani is not going to be happy.",
-                        "chance": 50
-                    }
+                    { "type": "ADVENTURE_ENDS", "flavor": "You all decide to wait it out, huddled together in the living room. After a few minutes of tense silence, you hear slow, heavy footsteps approaching the room from the darkened hallway. It is not one of your friends.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "You wake up to the sound of frantic scratching from inside your closet.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "You dare Oli to swim to the middle of the pond at night. He agrees, but only if you go with him.",
+        "id": 32,
+        "type": "INTERACTIVE",
+        "scenario": "You dare Oli to swim to the very middle of the spooky pond late at night. He agrees, but only on the condition that you go with him. The dark water looks like ink under the moonlight.",
         "options": [
             {
                 "action": "Accept the dare",
                 "outcomes": [
-                    {
-                        "result": "2x Lifesaver",
-                        "text": "You both swim out and make it back, hearts pounding. You feel like you could survive anything now.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "You slip on the muddy bank on your way in, and your phone falls into the water. It's gone forever.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You both jump in, scream at how cold the water is, and immediately get out.",
-                        "chance": 34
-                    }
+                    { "type": "REWARD", "flavor": "You both swim out to the center of the pond, your hearts pounding with a mixture of fear and adrenaline. You make it back to shore safely, feeling like you could survive anything now.", "item": "Lifesaver", "quantity": 2, "chance": 50 },
+                    { "type": "NOTHING", "flavor": "You both jump into the water, scream at how shockingly cold it is, and immediately scramble back out onto the bank, shivering and laughing. The dare is a hilarious failure.", "chance": 50 }
                 ]
             },
             {
-                "action": "Decline",
+                "action": "Decline the dare",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "Fakhruddin calls you a chicken, but you're a dry, safe chicken.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "Fakhruddin calls you a chicken, but you don't care. You're a dry, safe chicken, and you have a feeling that something ancient and hungry lives in that pond.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "The water in the pond turns murky and black for a moment, and you see something large and pale flash beneath the surface.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "Moin finds an old map tucked into a crack in the wall. It seems to show a hidden room somewhere in Nanur Bari.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "A mysterious old man from the jungle appears at the edge of the property, silently staring at you. He holds out a gnarled, root-like hand.",
+        "id": 33,
+        "type": "INTERACTIVE",
+        "scenario": "The mysterious old man from the jungle appears at the edge of the property, silently staring at you. He holds out a gnarled, root-like hand, beckoning you closer with one crooked finger.",
         "options": [
             {
                 "action": "Approach him",
                 "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "He grabs your arm. His touch is like ice and fire. You don't come back.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Jin's Talisman",
-                        "text": "He presses a weirdly shaped stone into your palm and vanishes back into the trees.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "He points a finger at you, and you suddenly feel your pockets become lighter. He smiles a toothless grin.",
-                        "chance": 34
-                    }
+                    { "type": "ADVENTURE_ENDS", "flavor": "He grabs your arm with surprising strength. His touch is like ice and fire at the same time, and he pulls you effortlessly towards the dark tree line. You don't come back.", "chance": 50 },
+                    { "type": "REWARD", "flavor": "He presses a weirdly shaped stone talisman into your palm. It's carved with symbols you don't recognize. Before you can say anything, he turns and vanishes back into the trees.", "item": "Jin's Talisman", "quantity": 1, "chance": 50 }
                 ]
             },
             {
                 "action": "Run inside",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You slam the door and lock it. Wise choice.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You don't hesitate for a second. You turn and bolt for the house, slamming the door and sliding the lock into place. You peek through the window, but the old man is already gone.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "Fakhruddin suggests setting up one of the wildlife cameras inside the house to catch any ghostly activity.",
+        "id": 34,
+        "type": "INTERACTIVE",
+        "scenario": "Fakhruddin suggests setting up one of his wildlife cameras inside the house to catch any ghostly activity. He wants to know if the strange noises you've been hearing are paranormal or just old pipes.",
         "options": [
             {
-                "action": "Point it at the hallway",
+                "action": "Point it at the main hallway",
                 "outcomes": [
-                    {
-                        "result": "Spooky Photo",
-                        "text": "The camera captures an image of a tall, distorted shadow standing in the hall when no one was there.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "The camera only shows footage of you all walking back and forth to the kitchen.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "The next morning, you review the footage. Most of it is boring, but for a few seconds around 3 AM, the camera captures an image of a tall, impossibly thin, distorted shadow standing in the hall when no one was there.", "item": "Spooky Photo", "quantity": 1, "chance": 100 }
                 ]
             },
             {
                 "action": "Point it at your bedroom",
                 "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "In the morning, the camera is gone, and so are you.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "The camera footage shows a small, goblin-like creature stealing your stuff while you sleep.",
-                        "chance": 50
-                    }
+                    { "type": "DESTROYED", "flavor": "In the morning, the camera is gone from its hiding spot. More alarmingly, so are you. Your friends find only an empty bed and an open window.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "A chilling whisper echoes from the well in the backyard, begging for help.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "You decide to play a prank on Fakhruddin by hiding in the pantry and jumping out while he's getting a snack.",
+        "id": 35,
+        "type": "INTERACTIVE",
+        "scenario": "You decide to play a prank on Fakhruddin by hiding in the dark, dusty pantry and jumping out when he comes for a midnight snack. You hear his footsteps approaching the door.",
         "options": [
             {
                 "action": "Jump out and scream",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "He screams like a goat and throws a bag of rice at you. It's hilarious.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "He's so startled he drops a jar of pickles. You spend the next hour cleaning it up and he steals your snacks as payment.",
-                        "chance": 50
-                    }
+                    { "type": "NOTHING", "flavor": "He lets out a scream that sounds like a terrified goat and throws a bag of rice at you in a panic. It's absolutely hilarious, and you all laugh about it for the rest of the night.", "chance": 50 },
+                    { "type": "ITEM_LOSS", "flavor": "He's so startled he drops the glass jar of pickles he was holding. It shatters everywhere. You spend the next hour cleaning up the sticky mess while he steals your snacks as 'payment for emotional distress.'", "item": "Snacks", "quantity": 1, "chance": 50 }
                 ]
             },
             {
-                "action": "Stay hidden",
+                "action": "Stay hidden and wait",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "He doesn't even notice you and leaves. Your prank is a total failure.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "He opens the door, grabs a packet of biscuits without even turning on the light, and leaves, completely oblivious to your presence. Your epic prank is a total failure.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "The local market is eerily quiet. The tea-stall owner warns you not to go into the jungle after dusk, speaking of a thing that 'walks without hands.'",
+        "id": 36,
+        "type": "INTERACTIVE",
+        "scenario": "Oli's drone footage reveals a strange, intricate symbol carved into the earth in the deepest part of the jungle. It's located right in the middle of that clearing where you found the patch of blood-soaked ground.",
         "options": [
             {
-                "action": "Next",
+                "action": "Go investigate the symbol",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "While fishing, you reel in a human skull instead of a fish. Its eye sockets seem to glow faintly with a green light.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "Oli's drone footage reveals a strange symbol carved into the earth in the deepest part of the jungle, right where the blood was.",
-        "options": [
-            {
-                "action": "Go investigate",
-                "outcomes": [
-                    {
-                        "result": "⏣ 50,000",
-                        "text": "You find a pouch of old coins buried under the symbol. Score!",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Adventure Ends",
-                        "text": "It's a trap. The ground gives way beneath you.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You find the spot, but the symbol is gone, as if it was never there.",
-                        "chance": 34
-                    }
+                    { "type": "REWARD", "flavor": "Following the drone's path, you find the symbol. Buried just underneath the surface, you unearth a small, leather pouch filled with old, tarnished silver coins. What a lucky find!", "amount": 50000, "chance": 50 },
+                    { "type": "ADVENTURE_ENDS", "flavor": "As you step into the center of the symbol, you realize it's a trap. The ground gives way beneath you, and you fall into a deep, dark pit from which there is no escape.", "chance": 50 }
                 ]
             },
             {
-                "action": "Delete the footage",
+                "action": "Delete the disturbing footage",
                 "outcomes": [
-                    {
-                        "result": "Lose your items",
-                        "text": "You delete it, but the spooky image is now burned into your phone's screen permanently, draining the battery.",
-                        "chance": 100
-                    }
+                    { "type": "ITEM_LOSS", "flavor": "You delete the creepy video, but the spooky image of the symbol is now permanently burned into your phone's screen. It's always faintly visible, and it seems to drain your battery life twice as fast.", "item": "Phone", "quantity": 1, "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "You hear the sound of a woman crying softly coming from the direction of the old graves.",
+        "id": 37,
+        "type": "INTERACTIVE",
+        "scenario": "While walking through a less-traveled part of the property, Moin trips over a tree root. As he gets up, he finds a beautiful, old silver locket half-buried in the dirt, its chain tangled around the root.",
         "options": [
             {
-                "action": "Next",
+                "action": "Open the locket",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "You find a single, perfectly preserved, ancient-looking coin on the doorstep, decorated with a skull.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Ancient Coin",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "Moin trips over a tree root and finds a silver locket half-buried in the dirt.",
-        "options": [
-            {
-                "action": "Open it",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "It's empty inside, but it smells faintly of jasmine and decay.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "A cloud of stinging dust flies out. In your confusion, you drop your bag and it rolls away.",
-                        "chance": 50
-                    }
+                    { "type": "NOTHING", "flavor": "You carefully pry open the locket. It's empty inside, but it releases a faint, sweet smell of jasmine and something else... the smell of decay and old graves.", "chance": 50 },
+                    { "type": "ITEM_LOSS_ALL", "flavor": "As soon as you open the clasp, a cloud of stinging, black dust flies out and into your eyes. Blinded and confused, you stumble backward and drop your entire bag, which rolls away into a thorny ditch.", "chance": 50 }
                 ]
             },
             {
-                "action": "Leave it",
+                "action": "Leave it where it is",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You brush the dirt off your pants and keep walking.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "Remembering every horror movie ever, you decide not to mess with the creepy, buried locket. You brush the dirt off your pants and continue on your way.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "An old radio in the living room crackles to life on its own, playing a distorted, sad tune from decades ago.",
+        "id": 38,
+        "type": "INTERACTIVE",
+        "scenario": "An old, unplugged radio in the living room suddenly crackles to life on its own. It begins playing a distorted, sorrowful tune from decades ago, the music wavering in and out of static.",
         "options": [
             {
                 "action": "Listen to the music",
                 "outcomes": [
-                    {
-                        "result": "Spooky Cassette",
-                        "text": "The song is strangely hypnotic. You feel a sudden urge to record it.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "The music fades out after a minute, leaving only static.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "The song is strangely hypnotic and sad, and it fills you with a sense of unease. You feel a sudden, inexplicable urge to record the ghostly tune on your phone.", "item": "Spooky Cassette", "quantity": 1, "chance": 100 }
                 ]
             },
             {
-                "action": "Unplug it",
+                "action": "Unplug the radio again",
                 "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "The moment you touch the plug, you get a massive electric shock. The radio keeps playing.",
-                        "chance": 100
-                    }
+                    { "type": "ADVENTURE_ENDS", "flavor": "You walk over and yank the plug from the wall socket, even though it was already unplugged. The moment your fingers touch the plug, you get a massive electric shock. The radio, somehow, keeps playing.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "The reflection you see in the pond isn't your own. It's older, paler, and smiling cruelly at you.",
+        "id": 39,
+        "type": "INTERACTIVE",
+        "scenario": "Fakhruddin finds a strange, mushroom growing on the side of an old tomb. It glows with a faint, pulsating purple light, and it looks both beautiful and incredibly poisonous.",
         "options": [
             {
-                "action": "Next",
+                "action": "Eat the mushroom",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "Fakhruddin finds a strange, glowing mushroom growing on the side of a tomb.",
-        "options": [
-            {
-                "action": "Eat it",
-                "outcomes": [
-                    {
-                        "result": "Adventure Ends & lose all your items",
-                        "text": "Your vision blurs, and you feel your body dissolving. Bad choice.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "2x Energy Drink",
-                        "text": "You feel a jolt of energy surge through you. You feel like you could run a marathon.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "It smells like damp earth and ozone.",
-                        "chance": 34
-                    }
+                    { "type": "DESTROYED", "flavor": "Your vision blurs into a kaleidoscope of colors, and you feel your body dissolving into pure energy. It's a wild ride, but it's the last one you'll ever take. Bad choice.", "chance": 50 },
+                    { "type": "REWARD", "flavor": "As you chew the glowing fungus, a jolt of pure energy surges through you. You feel stronger, faster, and more awake than you have in your entire life.", "item": "Energy Drink", "quantity": 2, "chance": 50 }
                 ]
             },
             {
-                "action": "Smell it",
+                "action": "Just smell the mushroom",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "It smells like damp earth and ozone.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You lean in and take a cautious sniff. The mushroom smells like damp earth, ozone after a thunderstorm, and something faintly sweet, like rotting flowers.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "Oli wants to try communicating with the spirits using a smartphone app that detects paranormal voices.",
+        "id": 40,
+        "type": "INTERACTIVE",
+        "scenario": "Oli downloaded a new app that claims to communicate with spirits by detecting electronic voice phenomena (EVP). He wants to try it out in the reputedly haunted master bedroom.",
         "options": [
             {
-                "action": "Use the app",
+                "action": "Use the ghost-hunting app",
                 "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "A voice comes through the phone, screaming your full name. The phone explodes in your hand.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "⏣ 50,000",
-                        "text": "The app records a voice whispering winning lottery numbers. You try them and they actually work!",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "All you get is static and Oli complaining that he wasted money on the app.",
-                        "chance": 34
-                    }
+                    { "type": "ADVENTURE_ENDS", "flavor": "You turn on the app. After a moment of static, a loud, clear, demonic voice screams your full name through the phone's speaker. The phone then overheats and explodes in your hand.", "chance": 50 },
+                    { "type": "REWARD", "flavor": "Among the static, the app records a faint, whispering voice. It seems to be whispering what sound like winning lottery numbers. You try them out later, and they actually work!", "amount": 100000, "chance": 50 }
                 ]
             },
             {
-                "action": "Refuse",
+                "action": "Refuse, it's a scam",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "Probably a good call. Those apps are scams anyway.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You tell Oli he's wasting his time and money on a silly app. You all decide to go get snacks instead, which is a much better use of your time.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "You notice all the clocks in the house have stopped at exactly 3:13 AM.",
+        "id": 41,
+        "type": "INTERACTIVE",
+        "scenario": "A trail of fresh, bloody footprints leads from the dark jungle towards the house, but stops abruptly at the back door. It looks like whatever made them simply vanished into thin air.",
         "options": [
             {
-                "action": "Next",
+                "action": "Follow the trail back into the jungle",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "You find a half-eaten piece of a pitha in the jungle, right next to a patch of strangely disturbed soil.",
-        "options": [
-            {
-                "action": "Dig there",
-                "outcomes": [
-                    {
-                        "result": "Lose your items",
-                        "text": "It's a box full of angry red ants. They swarm you and you drop everything while running away.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Haunted Ring",
-                        "text": "You unearth a small, tarnished silver ring with a skull emblem.",
-                        "chance": 50
-                    }
+                    { "type": "ADVENTURE_ENDS", "flavor": "You bravely follow the trail deep into the woods until it leads you right to the handless old man. He turns to face you, and you realize with horror that he was waiting for you to follow.", "chance": 100 }
                 ]
             },
             {
-                "action": "Walk away",
+                "action": "Lock the back door",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "It was probably just some animal's snack.",
-                        "chance": 100
-                    }
+                    { "type": "REWARD", "flavor": "You immediately slam the door and search for a way to secure it. You find a couple of old, rusty padlocks in a drawer and use them to bolt the door shut. You feel a little safer, for now.", "item": "Padlock", "quantity": 2, "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "The old groundskeeper, Foysal, warns you that the jungle 'demands a sacrifice' every few years to keep the spirits calm.",
+        "id": 42,
+        "type": "INTERACTIVE",
+        "scenario": "You find the old man’s tattered, moth-eaten shawl snagged on a thorny bush near the graveyard. As you reach for it, you notice it feels unnaturally cold, despite the humid weather.",
         "options": [
             {
-                "action": "Next",
+                "action": "Take the shawl",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "The air grows cold, and you can see your breath. It's the middle of a hot summer night.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "A trail of bloody footprints leads from the jungle towards the house, but stops abruptly at the back door.",
-        "options": [
-            {
-                "action": "Follow them back into the jungle",
-                "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "You follow the trail until it leads you right to the handless old man. He was waiting.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "You get hopelessly lost and have to ditch your heavy bag to find your way back.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "As you pull the shawl free from the thorns, a deep, overwhelming wave of sorrow washes over you. You clutch the cold fabric, and the feeling of sadness doesn't leave.", "item": "Cursed Shawl", "quantity": 1, "chance": 50 },
+                    { "type": "ITEM_LOSS", "flavor": "You get your arm and your bag tangled in the thorny bush while trying to free the shawl. By the time you get it loose, your clothes are torn and your bag has a huge rip in it.", "item": "Backpack", "quantity": 1, "chance": 50 }
                 ]
             },
             {
-                "action": "Lock the door",
+                "action": "Leave the shawl alone",
                 "outcomes": [
-                    {
-                        "result": "2x Padlock",
-                        "text": "You find a couple of old padlocks and secure the door. You feel a little safer.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You lock the door and spend the rest of the night nervously peeking out the window.",
-                        "chance": 50
-                    }
+                    { "type": "NOTHING", "flavor": "You carefully back away from the creepy shawl. You have a strong feeling that it belongs to something you really don't want to meet, and that taking it would be a very bad idea.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "You find the old man’s tattered shawl snagged on a bush near the graveyard. It feels unnaturally cold.",
+        "id": 43,
+        "type": "INTERACTIVE",
+        "scenario": "The door to the attic, which Mamanir swears is always nailed shut, is slightly ajar. You can hear a soft, melodic humming sound coming from within the darkness above.",
         "options": [
             {
-                "action": "Take it",
+                "action": "Go investigate the attic",
                 "outcomes": [
-                    {
-                        "result": "Cursed Shawl",
-                        "text": "As you pick it up, you feel a deep sorrow wash over you. The feeling doesn't leave.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "You get tangled in the thorny bush trying to free it and tear your clothes and bag.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "You cautiously climb the creaking stairs. On a dusty crate, you find a beautiful antique compass made of brass and glass. You notice its needle doesn't point north, but seems to quiver in the direction of unseen dangers.", "item": "Antique Compass", "quantity": 1, "chance": 50 },
+                    { "type": "ADVENTURE_ENDS", "flavor": "You slowly push the door open and step inside. The door immediately slams shut behind you with a deafening boom, and the strange humming abruptly stops.", "chance": 50 }
                 ]
             },
             {
-                "action": "Leave it",
+                "action": "Nail the door shut again",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You carefully back away from the creepy shawl.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You find a hammer and some old nails in a toolbox and firmly secure the attic door. Whatever is up there can stay up there. Out of sight, out of mind.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "All the photos in the family album on the coffee table now have their eyes scratched out.",
+        "id": 44,
+        "type": "INTERACTIVE",
+        "scenario": "You have a vivid dream of a hidden treasure buried under the ancient banyan tree at the edge of the property. However, a disembodied voice in the dream warns you that the treasure is protected by a powerful, malevolent curse.",
         "options": [
             {
-                "action": "Next",
+                "action": "Dig for the treasure in the morning",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "The door to the attic, which is always nailed shut, is slightly ajar. You can hear a soft humming from within.",
-        "options": [
-            {
-                "action": "Go investigate",
-                "outcomes": [
-                    {
-                        "result": "Antique Compass",
-                        "text": "You find an antique compass that always points to the nearest source of danger.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Adventure Ends",
-                        "text": "The door slams shut behind you, and the humming stops.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "You trip on the top step and tumble all the way down, scattering your belongings.",
-                        "chance": 34
-                    }
+                    { "type": "REWARD", "flavor": "You ignore the warning and start digging. Just as the prophecy foretold, your shovel hits a large, wooden chest filled with gold coins! The curse must have been a bluff!", "amount": 500000, "chance": 50 },
+                    { "type": "DESTROYED", "flavor": "You start digging, but the voice wasn't lying. The moment your shovel strikes the buried chest, a dark energy erupts from the ground, and you know no more. The curse was very, very real.", "chance": 50 }
                 ]
             },
             {
-                "action": "Nail it shut again",
+                "action": "Heed the dream's warning",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You find a hammer and some nails and secure the door. Out of sight, out of mind.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You decide that it's probably not a good idea to mess with ancient curses, even if they're just in a dream. You decide not to risk becoming the subject of a new ghost story.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "You dream of a hidden treasure buried under the ancient banyan tree, but a voice warns you that it's protected by a powerful Jin.",
-        "options": [
-            {
-                "action": "Dig for it in the morning",
-                "outcomes": [
-                    {
-                        "result": "⏣ 500,000",
-                        "text": "You find a pot of gold coins! The Jin must have been on vacation.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Adventure Ends & lose all your items",
-                        "text": "The Jin was not, in fact, on vacation.",
-                        "chance": 50
-                    }
-                ]
-            },
-            {
-                "action": "Heed the warning",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You decide not to risk becoming a ghost story.",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "You see a headless creature feasting on a dead fox. Its neck stump gurgles as it eats.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "Oli's phone starts glitching, showing distorted images of what looks like the inside of a coffin.",
-        "options": [
-            {
-                "action": "Throw the phone",
-                "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "The phone explodes in a flash of green light. You should have just turned it off.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "You chuck it into the pond. A moment later, all your other electronics start fizzing and die.",
-                        "chance": 50
-                    }
-                ]
-            },
-            {
-                "action": "Restart it",
-                "outcomes": [
-                    {
-                        "result": "Spooky Photo",
-                        "text": "The phone works again, but now its background is permanently a picture from inside the coffin.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "It reboots and works fine. Must have been a weird bug.",
-                        "chance": 50
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "The food left out overnight is covered in thick cobwebs by morning, even though it was in a sealed container.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "The trees in the jungle seem to rearrange themselves when you're not looking, making it impossible to find your way back.",
-        "options": [
-            {
-                "action": "Next",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "A headless chicken runs frantically around the yard before collapsing in a heap.",
+        "id": 45,
+        "type": "INTERACTIVE",
+        "scenario": "A headless chicken suddenly runs frantically around the yard in circles before collapsing in a heap near the well. It's one of the most bizarre and unsettling things you've ever seen.",
         "options": [
             {
                 "action": "Catch it for dinner",
                 "outcomes": [
-                    {
-                        "result": "Cursed Feather",
-                        "text": "You pluck a feather as a souvenir. It seems to whisper insults when you're alone.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Nothing Happens",
-                        "text": "Dinner is served. Tastes like... chicken.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "As you pluck the chicken's feathers, you find one that is jet black and seems to absorb the light around it. It feels cold to the touch and seems to whisper insults when you're alone.", "item": "Cursed Feather", "quantity": 1, "chance": 100 }
                 ]
             },
             {
-                "action": "Run",
+                "action": "Run away from the cursed poultry",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You decide you're not hungry enough to deal with possessed poultry.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You decide you're not nearly hungry enough to deal with possessed, headless poultry today. You back away slowly and go inside to find a less demonic snack.", "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "You find a note written in what looks like blood on your pillow. It says, 'He watches you from the water.'",
+        "id": 46,
+        "type": "INTERACTIVE",
+        "scenario": "A mysterious, thick fog suddenly rolls in from the jungle, blanketing all of Nanur Bari in a dense, grey haze. It's unnaturally quiet, but you can hear things slithering and moving within the mist.",
         "options": [
             {
-                "action": "Next",
+                "action": "Stay safely inside",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "A mysterious fog rolls in, blanketing Nanur Bari. It's thick, and you can hear things slithering within it.",
-        "options": [
-            {
-                "action": "Stay inside",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "You lock the doors and wait for it to pass. It's a very boring evening.",
-                        "chance": 100
-                    }
+                    { "type": "NOTHING", "flavor": "You wisely decide to lock the doors and wait for the spooky fog to pass. You spend a very boring, but very safe, evening listening to the strange noises outside.", "chance": 100 }
                 ]
             },
             {
-                "action": "Explore the fog",
+                "action": "Explore the creepy fog",
                 "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "You walk into the fog and are never seen again.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "⏣ 75,000",
-                        "text": "You stumble upon a lost visitor who gives you a huge reward for guiding them back.",
-                        "chance": 33
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "You get completely lost and drop your bag somewhere in the mist.",
-                        "chance": 34
-                    }
+                    { "type": "ADVENTURE_ENDS", "flavor": "You bravely step out into the fog, but you quickly become disoriented and lost. You wander for what feels like hours before you walk into the fog and are never seen again.", "chance": 50 },
+                    { "type": "REWARD", "flavor": "You stumble through the mist and bump into a wealthy businessman whose car broke down. He's hopelessly lost. You guide him back to the main road, and he gives you a huge reward for your help.", "amount": 75000, "chance": 50 }
                 ]
             }
         ]
     },
     {
-        "scenario": "An old man appears before you, his hands restored but twisted into claws. He opens his mouth and a swarm of locusts flies out.",
+        "id": 47,
+        "type": "INTERACTIVE",
+        "scenario": "Fakhruddin suddenly starts speaking in a strange, deep, guttural voice. He's reciting what sounds like an ancient curse in a language that none of you have ever heard before. His eyes are glazed over.",
         "options": [
             {
-                "action": "Next",
+                "action": "Slap him to snap him out of it",
                 "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "chance": 100
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "scenario": "Fakhruddin starts speaking in a strange, deep voice, reciting some ancient curse in a language none of you understand.",
-        "options": [
-            {
-                "action": "Slap him",
-                "outcomes": [
-                    {
-                        "result": "Nothing Happens",
-                        "text": "He snaps out of it, looking confused. 'Why did you slap me, choraaaa?'",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Lose your items",
-                        "text": "He snarls and shoves you, causing you to drop your things. He doesn't remember doing it afterward.",
-                        "chance": 50
-                    }
+                    { "type": "NOTHING", "flavor": "You give him a firm slap across the cheek. He blinks a few times and snaps out of it, looking confused. 'Why did you just slap me, choraaaa?' he asks, rubbing his face.", "chance": 50 },
+                    { "type": "ITEM_LOSS_ALL", "flavor": "He snarls and shoves you with surprising strength, causing you to fall and scatter your belongings everywhere. A moment later, he's back to normal and doesn't remember doing it.", "chance": 50 }
                 ]
             },
             {
-                "action": "Record him",
+                "action": "Record the strange language",
                 "outcomes": [
-                    {
-                        "result": "Spooky Cassette",
-                        "text": "You manage to record the creepy monologue. It might be useful later.",
-                        "chance": 100
-                    }
+                    { "type": "REWARD", "flavor": "You quickly pull out your phone and manage to record his creepy, possessed monologue. The audio file is unsettling, but it might contain a valuable clue.", "item": "Spooky Cassette", "quantity": 1, "chance": 100 }
                 ]
             }
         ]
     },
     {
-        "scenario": "The Jin corners you in the old graveyard during a thunderstorm.",
+        "id": 48,
+        "type": "INTERACTIVE",
+        "scenario": "During a fierce thunderstorm, the handless Jin finally corners you in the old family graveyard. It lets out a terrifying shriek as lightning illuminates its monstrous form.",
         "options": [
             {
-                "action": "Use the collected items against it",
+                "action": "Use your collected items against it",
                 "outcomes": [
-                    {
-                        "result": "Haunted Box",
-                        "text": "Your weird collection of cursed items somehow combines to banish the Jin in a flash of neon light, leaving behind a box.",
-                        "chance": 50
-                    },
-                    {
-                        "result": "Adventure Ends & lose all your items",
-                        "text": "The Jin laughs, says your junk is useless, and promptly ends your adventure.",
-                        "chance": 50
-                    }
+                    { "type": "REWARD", "flavor": "You throw your bizarre collection of cursed and haunted items at the Jin. In a flash of neon light and weird energy, the creature is banished, leaving behind a mysterious, glowing box.", "item": "Haunted Box", "quantity": 1, "chance": 50 },
+                    { "type": "DESTROYED", "flavor": "The Jin lets out a sound that might be a laugh. It swats your useless junk aside and grabs you. Your adventure ends here.", "chance": 50 }
                 ]
             },
             {
                 "action": "Try to reason with it",
                 "outcomes": [
-                    {
-                        "result": "Adventure Ends",
-                        "text": "Turns out, ancient evil spirits aren't really into peace talks.",
-                        "chance": 100
-                    }
+                    { "type": "ADVENTURE_ENDS", "flavor": "You try to talk to the ancient, evil spirit. As it turns out, malevolent beings from the dawn of time aren't really interested in having a calm, rational discussion.", "chance": 100 }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 49,
+        "type": "INTERACTIVE",
+        "scenario": "You find a loose brick in the wall of the old, abandoned part of the local mosque. It feels different from the others, and you can wiggle it back and forth. There might be something hidden behind it.",
+        "options": [
+            {
+                "action": "Pull the brick out",
+                "outcomes": [
+                    { "type": "REWARD", "flavor": "You work the brick free and pull it out. Inside the dark cavity, you find a small, rolled-up piece of parchment tied with a string. It looks like an ancient prayer or spell.", "item": "Ancient Scroll", "quantity": 1, "chance": 50 },
+                    { "type": "ITEM_LOSS_ALL", "flavor": "As you pull the brick out, you disturb a nest of very angry wasps living in the wall. They swarm out and attack you, and in your haste to escape, you drop everything you are carrying.", "chance": 50 }
+                ]
+            },
+            {
+                "action": "Leave it alone",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "You decide it's probably disrespectful to mess with the structure of the old mosque. You push the brick back into place and leave the potential secret hidden.", "chance": 100 }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 50,
+        "type": "INTERACTIVE",
+        "scenario": "A snake charmer is visiting the village, playing a haunting tune on his flute. He claims his prize snake can find hidden treasures. For a small price, he offers to let you use it.",
+        "options": [
+            {
+                "action": "Pay the snake charmer",
+                "outcomes": [
+                    { "type": "REWARD", "flavor": "You pay the man, and he begins to play. The snake slithers out of its basket and leads you to a spot near the pond. You dig where it stops and find a small, buried chest filled with antique jewelry!", "item": "Rare Item", "quantity": 1, "chance": 50 },
+                    { "type": "ITEM_LOSS", "flavor": "You pay the man, but his snake just slithers in a circle a few times before going back into its basket to take a nap. The snake charmer just shrugs and pockets your money. You've been scammed.", "item": "Coins", "quantity": 1, "chance": 50 }
+                ]
+            },
+            {
+                "action": "Decline his offer",
+                "outcomes": [
+                    { "type": "NOTHING", "flavor": "You politely decline the snake charmer's offer. It seems a bit too much like a tourist trap, and you decide to save your money for something more reliable, like snacks.", "chance": 100 }
                 ]
             }
         ]

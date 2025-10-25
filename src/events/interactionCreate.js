@@ -4,13 +4,12 @@ import db from '../utils/database.js';
 import logger from '../utils/logger.js';
 import { items as itemData } from '../data/items.js';
 
-async function getNextAdventureNode(interaction, session) {
+async function handleAdventureNode(interaction, session) {
     const node = getCurrentNode(session.userId);
 
     if (!node) {
-        // Adventure ends
         const inventory = db.getUserInventory(session.userId);
-        const inventoryList = inventory.map(i => `📦 ${i.item} (x${i.quantity})`).join('\n- ');
+        const inventoryList = inventory.map(i => `${itemData[i.item] || '📦'} ${i.item} (x${i.quantity})`).join('\n- ');
         const embed = new EmbedBuilder()
             .setTitle('Adventure Ended!')
             .setDescription(`You have completed your adventure. Here is what you found:\n- ${inventoryList}`)
@@ -26,38 +25,16 @@ async function getNextAdventureNode(interaction, session) {
         .setColor('#0099ff');
 
     const row = new ActionRowBuilder();
-    if (node.options.length === 1 && node.options[0].action === 'Next') {
-        // Non-interactive node
-        const outcome = node.options[0].outcomes[0];
-        if (outcome.result.startsWith('⏣')) {
-            const amount = parseInt(outcome.result.split(' ')[1].replace(/,/g, ''));
-            db.updateUserWallet(session.userId, amount);
-        } else if (outcome.result !== 'Nothing Happens') {
-            db.updateUserInventory(session.userId, outcome.result, 1);
-        }
-
-        if (outcome.result !== 'Nothing Happens') {
-            embed.addFields({ name: 'You received', value: `📦 ${outcome.result}` });
-        }
-
+    if (node.type === 'NON_INTERACTIVE') {
+        embed.setDescription(`${node.scenario}\n- ${node.options[0].outcomes[0].flavor}`);
         row.addComponents(
-            new ButtonBuilder()
-                .setCustomId('next_node')
-                .setLabel('Next →')
-                .setStyle(ButtonStyle.Success),
-            new ButtonBuilder()
-                .setCustomId('view_inventory')
-                .setLabel('🎒 Inventory')
-                .setStyle(ButtonStyle.Secondary),
+            new ButtonBuilder().setCustomId('next_node').setLabel('Next →').setStyle(ButtonStyle.Success),
+            new ButtonBuilder().setCustomId('view_inventory').setLabel('🎒 Inventory').setStyle(ButtonStyle.Secondary)
         );
     } else {
-        // Interactive node
         node.options.forEach((option, index) => {
             row.addComponents(
-                new ButtonBuilder()
-                    .setCustomId(`adventure_option_${index}`)
-                    .setLabel(option.action)
-                    .setStyle(ButtonStyle.Primary),
+                new ButtonBuilder().setCustomId(`adventure_option_${index}`).setLabel(option.action).setStyle(ButtonStyle.Primary)
             );
         });
     }
@@ -70,38 +47,27 @@ export default {
     async execute(interaction) {
         if (interaction.isChatInputCommand()) {
             const command = interaction.client.commands.get(interaction.commandName);
-
-            if (!command) {
-                logger.error(`No command matching ${interaction.commandName} was found.`);
-                return;
-            }
-
+            if (!command) return logger.error(`No command matching ${interaction.commandName} was found.`);
             try {
                 await command.execute(interaction);
             } catch (error) {
                 logger.error(error);
-                if (interaction.replied || interaction.deferred) {
-                    await interaction.followUp({ content: 'There was an error while executing this command!', ephemeral: true });
-                } else {
-                    await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-                }
+                await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
             }
         } else if (interaction.isButton()) {
             await interaction.deferUpdate();
+            const session = getSession(interaction.user.id);
+
             if (interaction.customId === 'start_adventure') {
-                const session = createSession(interaction.user.id);
-                await getNextAdventureNode(interaction, session);
+                const newSession = createSession(interaction.user.id);
+                await handleAdventureNode(interaction, newSession);
             } else if (interaction.customId.startsWith('adventure_option_')) {
+                if (!session) return await interaction.editReply({ content: "This adventure has ended.", components: [] });
+
                 const optionIndex = parseInt(interaction.customId.split('_').pop());
-                const session = getSession(interaction.user.id);
-                if (!session) {
-                    await interaction.editReply({ content: "This adventure has ended.", components: [] });
-                    return;
-                }
                 const node = getCurrentNode(session.userId);
                 const option = node.options[optionIndex];
 
-                // Determine outcome
                 const random = Math.random() * 100;
                 let cumulativeChance = 0;
                 let outcome;
@@ -113,133 +79,91 @@ export default {
                     }
                 }
 
-                // Update inventory
-                if (outcome.result.startsWith('⏣')) {
-                    const amount = parseInt(outcome.result.split(' ')[1].replace(/,/g, ''));
-                    db.updateUserWallet(session.userId, amount);
-                } else if (outcome.result === 'Lose your items') {
-                    db.clearUserInventory(session.userId);
-                } else if (outcome.result.includes('Lifesaver') || outcome.result.includes('Energy Drink') || outcome.result.includes('Padlock')) {
-                    const item = outcome.result.split('x ').pop();
-                    const quantity = parseInt(outcome.result.split('x ')[0]);
-                    db.updateUserInventory(session.userId, item, quantity);
-                } else if (outcome.result !== 'Nothing Happens' && outcome.result !== 'Adventure Ends' && !outcome.result.startsWith('Adventure Ends')) {
-                    db.updateUserInventory(session.userId, outcome.result, 1);
+                let description = `${node.scenario}\n\n**You chose: \`${option.action}\`**\n${outcome.flavor}\n\n`;
+
+                switch (outcome.type) {
+                    case 'REWARD':
+                        if (outcome.item) {
+                            db.updateUserInventory(session.userId, outcome.item, outcome.quantity);
+                            description += `- ${outcome.quantity} ${itemData[outcome.item] || '📦'} ${outcome.item}`;
+                        } else if (outcome.amount) {
+                            db.updateUserWallet(session.userId, outcome.amount);
+                            description += `- ⏣ ${outcome.amount.toLocaleString()}`;
+                        }
+                        break;
+                    case 'ITEM_LOSS':
+                        db.removeUserItem(session.userId, outcome.item, outcome.quantity);
+                        description += `- You lost your ${itemData[outcome.item] || '📦'} ${outcome.item}`;
+                        break;
+                    case 'ITEM_LOSS_ALL':
+                        db.clearUserInventory(session.userId);
+                        description += `- You lost all items in your backpack.`;
+                        break;
+                    case 'NOTHING':
+                        description += `- Despite the intrigue, your situation remains unaffected.`;
+                        break;
+                    case 'DESTROYED':
+                        db.clearUserInventory(session.userId);
+                        description += `- You lost all items in your backpack, all your rewards, and your adventure has ended.`;
+                        endSession(session.userId);
+                        break;
+                    case 'ADVENTURE_ENDS':
+                        description += `- Your adventure has ended.`;
+                        endSession(session.userId);
+                        break;
                 }
 
-                if (outcome.result.startsWith('Adventure Ends')) {
-                    const embed = new EmbedBuilder()
-                        .setTitle('Adventure Ended!')
-                        .setDescription(outcome.text || 'Your adventure has come to an abrupt end.')
-                        .setColor('#ff0000');
-                    await interaction.editReply({ embeds: [embed], components: [] });
-                    endSession(session.userId);
-                    return;
-                }
+                const embed = new EmbedBuilder().setTitle('An Adventure!').setDescription(description).setColor('#0099ff');
+                const row = new ActionRowBuilder();
 
-                const embed = new EmbedBuilder()
-                    .setTitle('An Adventure!')
-                    .setDescription(`${node.scenario}\n\n**You chose: ${option.action}**\n${outcome.text || '...'}`)
-                    .setColor('#0099ff');
-
-                if (outcome.result !== 'Nothing Happens' && outcome.result !== 'Adventure Ends' && !outcome.result.startsWith('Adventure Ends') && outcome.result !== 'Lose your items') {
-                    embed.addFields({ name: 'You received', value: `📦 ${outcome.result}` });
-                }
-
-                const row = new ActionRowBuilder()
-                    .addComponents(
-                        new ButtonBuilder()
-                            .setCustomId('next_node')
-                            .setLabel('Next →')
-                            .setStyle(ButtonStyle.Success),
-                        new ButtonBuilder()
-                            .setCustomId('view_inventory')
-                            .setLabel('🎒 Inventory')
-                            .setStyle(ButtonStyle.Secondary),
+                if (outcome.type !== 'DESTROYED' && outcome.type !== 'ADVENTURE_ENDS') {
+                    row.addComponents(
+                        new ButtonBuilder().setCustomId('next_node').setLabel('Next →').setStyle(ButtonStyle.Success),
+                        new ButtonBuilder().setCustomId('view_inventory').setLabel('🎒 Inventory').setStyle(ButtonStyle.Secondary)
                     );
+                }
+
                 await interaction.editReply({ embeds: [embed], components: [row] });
             } else if (interaction.customId === 'next_node') {
-                const session = advanceSession(interaction.user.id);
-                if (session) {
-                    await getNextAdventureNode(interaction, session);
-                } else {
-                    const inventory = db.getUserInventory(interaction.user.id);
-                    const inventoryList = inventory.map(i => `📦 ${i.item} (x${i.quantity})`).join('\n- ');
-                    const embed = new EmbedBuilder()
-                        .setTitle('Adventure Ended!')
-                        .setDescription(`You have completed your adventure. Here is what you found:\n- ${inventoryList}`)
-                        .setColor('#ff0000');
-                    await interaction.editReply({ embeds: [embed], components: [] });
-                }
+                if (!session) return await interaction.editReply({ content: "This adventure has ended.", components: [] });
+                advanceSession(interaction.user.id);
+                await handleAdventureNode(interaction, session);
             } else if (interaction.customId === 'view_inventory') {
-                const session = getSession(interaction.user.id);
-                if (!session) {
-                    await interaction.followUp({ content: "This adventure has ended.", ephemeral: true });
-                    return;
-                }
+                if (!session) return await interaction.followUp({ content: "This adventure has ended.", ephemeral: true });
                 const inventory = db.getUserInventory(session.userId);
-                const inventoryList = inventory.length > 0 ? `- ${inventory.map(i => `📦 ${i.item} (x${i.quantity})`).join('\n- ')}` : "You have no items.";
+                const inventoryList = inventory.length > 0 ? inventory.map(i => `${itemData[i.item] || '📦'} ${i.item} (x${i.quantity})`).join('\n') : "You have no items.";
                 await interaction.followUp({ content: `**Inventory:**\n${inventoryList}`, ephemeral: true });
             } else if (interaction.customId.startsWith('inventory_')) {
                 const [action, userId, pageStr] = interaction.customId.split('_').slice(1);
                 let page = parseInt(pageStr);
 
-                if (interaction.user.id !== userId) {
-                    await interaction.followUp({ content: "You cannot control another user's inventory.", ephemeral: true });
-                    return;
-                }
+                if (interaction.user.id !== userId) return await interaction.followUp({ content: "You cannot control another user's inventory.", ephemeral: true });
 
-                if (action === 'next') {
-                    page++;
-                } else if (action === 'prev') {
-                    page--;
-                }
+                if (action === 'next') page++;
+                else if (action === 'prev') page--;
 
                 const user = await interaction.client.users.fetch(userId);
                 const inventory = db.getUserInventory(user.id);
                 const itemsPerPage = 8;
                 const totalPages = Math.ceil(inventory.length / itemsPerPage) || 1;
+                const currentItems = inventory.slice(page * itemsPerPage, (page + 1) * itemsPerPage);
+                const description = currentItems.map(item => `**${itemData[item.item] || '📦'} ${item.item}** ─ ${item.quantity}`).join('\n');
 
-                const generateEmbed = (page) => {
-                    const start = page * itemsPerPage;
-                    const end = start + itemsPerPage;
-                    const currentItems = inventory.slice(start, end);
+                const embed = new EmbedBuilder()
+                    .setTitle(`${user.username}'s Inventory`)
+                    .setThumbnail(user.displayAvatarURL())
+                    .setDescription(description || 'This user has no items.')
+                    .setColor(5793266)
+                    .setTimestamp()
+                    .setFooter({ text: `Page ${page + 1} of ${totalPages}` });
 
-                    const description = currentItems.map(item => {
-                        const emoji = itemData[item.item] || '📦';
-                        return `**${emoji} ${item.item}** ─ ${item.quantity}`;
-                    }).join('\n');
-
-                    return new EmbedBuilder()
-                        .setTitle(`${user.username}'s Inventory`)
-                        .setThumbnail(user.displayAvatarURL())
-                        .setDescription(description || 'This user has no items.')
-                        .setColor(5793266)
-                        .setTimestamp()
-                        .setFooter({ text: `Page ${page + 1} of ${totalPages}` });
-                };
-
-                const generateButtons = (page) => {
-                    return new ActionRowBuilder()
-                        .addComponents(
-                            new ButtonBuilder()
-                                .setCustomId(`inventory_prev_${user.id}_${page}`)
-                                .setEmoji('⬅️')
-                                .setStyle(ButtonStyle.Secondary)
-                                .setDisabled(page === 0),
-                            new ButtonBuilder()
-                                .setCustomId(`inventory_next_${user.id}_${page}`)
-                                .setEmoji('➡️')
-                                .setStyle(ButtonStyle.Secondary)
-                                .setDisabled(page >= totalPages - 1),
-                        );
-                };
-
-                const embed = generateEmbed(page);
-                const row = generateButtons(page);
+                const row = new ActionRowBuilder().addComponents(
+                    new ButtonBuilder().setCustomId(`inventory_prev_${user.id}_${page}`).setEmoji('⬅️').setStyle(ButtonStyle.Secondary).setDisabled(page === 0),
+                    new ButtonBuilder().setCustomId(`inventory_next_${user.id}_${page}`).setEmoji('➡️').setStyle(ButtonStyle.Secondary).setDisabled(page >= totalPages - 1)
+                );
 
                 await interaction.editReply({ embeds: [embed], components: [row] });
             }
         }
-    },
+    }
 };
