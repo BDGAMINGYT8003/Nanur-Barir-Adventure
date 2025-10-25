@@ -19,6 +19,8 @@ function createSession(userId) {
         rewards: {
             coins: 0,
         },
+        lostItems: [],
+        ended: false,
         nodes: [...nodes].sort(() => Math.random() - 0.5).slice(0, 20),
     };
     sessions.set(userId, session);
@@ -35,7 +37,7 @@ function advanceSession(userId) {
 
     session.progress++;
     if (session.progress >= session.nodes.length) {
-        return null;
+        session.ended = true;
     }
     return session;
 }

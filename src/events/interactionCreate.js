@@ -1,31 +1,60 @@
-import { Events, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
+import { Events, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } from 'discord.js';
 import { createSession, getSession, advanceSession, getCurrentNode, endSession } from '../utils/adventureManager.js';
 import db from '../utils/database.js';
 import logger from '../utils/logger.js';
 import { items as itemData } from '../data/items.js';
 
+const funFacts = [
+    "The house was built on an ancient burial ground. Classic.",
+    "The locals say the original owner of the house just vanished one day.",
+    "The well in the backyard is rumored to be bottomless.",
+    "The jungle is said to be home to a creature that walks without a head.",
+    "The clocks in the house are all stopped at 3:13 AM, the 'devil's hour'.",
+];
+
+async function showAdventureSummary(interaction, session) {
+    const image = new AttachmentBuilder('assets/spooky.png');
+    let backpack = '';
+    if (session.rewards.coins > 0) {
+        backpack += `- ⏣ ${session.rewards.coins.toLocaleString()}\n`;
+    }
+    if (session.inventory.length > 0) {
+        backpack += `- ${session.inventory.map(i => `${i.quantity} ${itemData[i.item] || '📦'} ${i.item}`).join('\n- ')}`;
+    }
+    if (backpack === '') {
+        backpack = 'Nothing!';
+    }
+
+    let lostItems = 'Nothing!';
+    if (session.lostItems.length > 0) {
+        lostItems = `- ${session.lostItems.map(i => `${i.quantity} ${itemData[i.item] || '📦'} ${i.item}`).join('\n- ')}`;
+    }
+
+    const embed = new EmbedBuilder()
+        .setTitle('Adventure Complete!')
+        .setDescription(
+            '**The Haunting of Nanur Bari**\n\n' +
+            `**Interactions**\n${session.progress + 1}\n\n` +
+            `**Backpack**\n${backpack}\n\n` +
+            `**Lost Items**\n${lostItems}`
+        )
+        .setImage('attachment://spooky.png')
+        .setFooter({ text: `Fun Fact: ${funFacts[Math.floor(Math.random() * funFacts.length)]}` });
+
+    await interaction.editReply({ embeds: [embed], components: [], files: [image] });
+    endSession(session.userId);
+}
+
 async function handleAdventureNode(interaction, session) {
+    if (session.ended) {
+        await showAdventureSummary(interaction, session);
+        return;
+    }
+
     const node = getCurrentNode(session.userId);
 
     if (!node) {
-        // This is where the adventure ends successfully
-        let finalDescription = 'You have completed your adventure. All rewards have been saved to your inventory!\n\n**You received:**\n';
-        if (session.inventory.length === 0 && session.rewards.coins === 0) {
-            finalDescription = 'You have completed your adventure, but you did not find anything.';
-        } else {
-            if (session.rewards.coins > 0) {
-                db.updateUserWallet(session.userId, session.rewards.coins);
-                finalDescription += `- ⏣ ${session.rewards.coins.toLocaleString()}\n`;
-            }
-            for (const item of session.inventory) {
-                db.updateUserInventory(session.userId, item.item, item.quantity);
-                finalDescription += `- ${item.quantity} ${itemData[item.item] || '📦'} ${item.item}\n`;
-            }
-        }
-
-        const embed = new EmbedBuilder().setTitle('Adventure Ended!').setDescription(finalDescription).setColor('#ff0000');
-        await interaction.editReply({ embeds: [embed], components: [] });
-        endSession(session.userId);
+        await showAdventureSummary(interaction, session);
         return;
     }
 
@@ -105,13 +134,15 @@ export default {
                     case 'ITEM_LOSS':
                         const itemIndex = session.inventory.findIndex(i => i.item === outcome.item);
                         if (itemIndex > -1) {
-                            session.inventory.splice(itemIndex, 1);
+                            const lostItem = session.inventory.splice(itemIndex, 1)[0];
+                            session.lostItems.push(lostItem);
                             description += `\n\n- You lost your ${itemData[outcome.item] || '📦'} ${outcome.item}`;
                         } else {
                             description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
                         }
                         break;
                     case 'ITEM_LOSS_ALL':
+                        session.lostItems.push(...session.inventory);
                         session.inventory = [];
                         description += `\n\n- You lost all items in your backpack.`;
                         break;
@@ -119,29 +150,25 @@ export default {
                         description += `\n\n- Despite the intrigue, your situation remains unaffected.`;
                         break;
                     case 'DESTROYED':
+                        session.lostItems.push(...session.inventory);
                         session.inventory = [];
                         session.rewards.coins = 0;
                         description += `\n\n- You lost all items in your backpack, all your rewards, and your adventure has ended.`;
-                        endSession(session.userId);
+                        session.ended = true;
                         break;
                     case 'ADVENTURE_ENDS':
                         description += `\n\n- Your adventure has ended.`;
-                        endSession(session.userId);
+                        session.ended = true;
                         break;
                 }
 
                 const embed = new EmbedBuilder().setTitle('An Adventure!').setDescription(description).setColor('#0099ff');
-                const components = [];
+                const row = new ActionRowBuilder().addComponents(
+                    new ButtonBuilder().setCustomId('next_node').setLabel('Next →').setStyle(ButtonStyle.Success),
+                    new ButtonBuilder().setCustomId('view_backpack').setLabel('🎒 Backpack').setStyle(ButtonStyle.Secondary)
+                );
 
-                if (outcome.type !== 'DESTROYED' && outcome.type !== 'ADVENTURE_ENDS') {
-                    const row = new ActionRowBuilder().addComponents(
-                        new ButtonBuilder().setCustomId('next_node').setLabel('Next →').setStyle(ButtonStyle.Success),
-                        new ButtonBuilder().setCustomId('view_backpack').setLabel('🎒 Backpack').setStyle(ButtonStyle.Secondary)
-                    );
-                    components.push(row);
-                }
-
-                await interaction.editReply({ embeds: [embed], components });
+                await interaction.editReply({ embeds: [embed], components: [row] });
             } else if (interaction.customId === 'next_node') {
                 if (!session) return await interaction.editReply({ content: "This adventure has ended.", components: [] });
                 advanceSession(interaction.user.id);
