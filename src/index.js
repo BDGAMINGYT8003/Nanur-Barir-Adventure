@@ -2,7 +2,6 @@ import { Client, GatewayIntentBits, Collection, REST, Routes } from 'discord.js'
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import 'dotenv/config';
 import logger from './utils/logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
