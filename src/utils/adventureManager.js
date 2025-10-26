@@ -5,16 +5,21 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const nodesPath = path.join(__dirname, '../data/nodes.json');
-const nodes = JSON.parse(fs.readFileSync(nodesPath, 'utf8'));
 
-const interactiveNodes = nodes.filter(n => n.type === 'INTERACTIVE');
-const nonInteractiveNodes = nodes.filter(n => n.type === 'NON_INTERACTIVE');
+function loadNodes(adventure) {
+    const filePath = path.join(__dirname, `../data/${adventure}.json`);
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    return JSON.parse(fileContent);
+}
 
 const sessions = new Map();
 
-function createSession(userId) {
+function createSession(userId, adventure) {
     db.getUser(userId);
+
+    const allNodes = loadNodes(adventure);
+    const interactiveNodes = allNodes.filter(n => n.type === 'INTERACTIVE');
+    const nonInteractiveNodes = allNodes.filter(n => n.type === 'NON_INTERACTIVE');
 
     const interactiveCount = Math.floor(Math.random() * 5) + 8; // 8-12
     const nonInteractiveCount = 20 - interactiveCount;
@@ -34,6 +39,7 @@ function createSession(userId) {
 
     const session = {
         userId,
+        adventure,
         progress: 0,
         inventory: [],
         rewards: {

@@ -12,6 +12,11 @@ const funFacts = [
     "The clocks in the house are all stopped at 3:13 AM, the 'devil's hour'.",
 ];
 
+const adventureNames = {
+    'spooky_adventure': 'The Haunting of Nanur Bari',
+    'bandarban_adventure': 'The Mystery of Meghaloy Bungalow',
+};
+
 async function showAdventureSummary(interaction, session) {
     const image = new AttachmentBuilder('assets/spooky.png');
     let backpack = '';
@@ -37,7 +42,7 @@ async function showAdventureSummary(interaction, session) {
     const embed = new EmbedBuilder()
         .setTitle('Adventure Complete!')
         .setDescription(
-            '**Name:**\nThe Haunting of Nanur Bari\n\n' +
+            `**Name:**\n${adventureNames[session.adventure]}\n\n` +
             `**Interactions**\n${session.progress + 1}\n\n` +
             `**Backpack**\n${backpack}\n\n` +
             `**Lost Items**\n${lostItems}`
@@ -67,7 +72,7 @@ async function handleAdventureNode(interaction, session) {
         description = `> ${description.replace(/\n/g, '\n> ')}\n\n- ${node.options[0].outcomes[0].flavor}`;
     }
 
-    const embed = new EmbedBuilder().setTitle('An Adventure!').setDescription(description).setColor('#0099ff');
+    const embed = new EmbedBuilder().setTitle(adventureNames[session.adventure]).setDescription(description).setColor('#0099ff');
     const row = new ActionRowBuilder();
 
     if (node.type === 'NON_INTERACTIVE') {
@@ -98,14 +103,18 @@ export default {
                 logger.error(error);
                 await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
             }
+        } else if (interaction.isStringSelectMenu()) {
+            if (interaction.customId === 'select_adventure') {
+                await interaction.deferUpdate();
+                const adventureId = interaction.values[0];
+                const session = createSession(interaction.user.id, adventureId);
+                await handleAdventureNode(interaction, session);
+            }
         } else if (interaction.isButton()) {
             await interaction.deferUpdate();
             const session = getSession(interaction.user.id);
 
-            if (interaction.customId === 'start_adventure') {
-                const newSession = createSession(interaction.user.id);
-                await handleAdventureNode(interaction, newSession);
-            } else if (interaction.customId.startsWith('adventure_option_')) {
+            if (interaction.customId.startsWith('adventure_option_')) {
                 if (!session) return await interaction.editReply({ content: "This adventure has ended.", components: [] });
 
                 const optionIndex = parseInt(interaction.customId.split('_').pop());
@@ -174,7 +183,7 @@ export default {
                         break;
                 }
 
-                const embed = new EmbedBuilder().setTitle('An Adventure!').setDescription(description).setColor('#0099ff');
+                const embed = new EmbedBuilder().setTitle(adventureNames[session.adventure]).setDescription(description).setColor('#0099ff');
                 const row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder().setCustomId('next_node').setLabel('Next →').setStyle(ButtonStyle.Success),
                     new ButtonBuilder().setCustomId('view_backpack').setLabel('🎒 Backpack').setStyle(ButtonStyle.Secondary)

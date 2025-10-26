@@ -1,0 +1,506 @@
+[
+    {
+        "id": 51,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The morning after the storm, Bandarban is washed clean. The air is fresh with the smell of wet earth and jungle blossoms. The tension from last night seems to have been swept away with the rain.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "The adventure continues..." } ] } ]
+    },
+    {
+        "id": 52,
+        "type": "NON_INTERACTIVE",
+        "scenario": "At breakfast, Mr. Irfan seems more relaxed. He mentions the land dispute is more complicated than he let on, involving old family promises and local legends.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "The plot thickens..." } ] } ]
+    },
+    {
+        "id": 53,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Fakhruddin is scanning the distant hills with his binoculars. He mutters that he saw a flicker of light, like sunlight reflecting off glass, from a ridge overlooking the bungalow.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Someone might be watching." } ] } ]
+    },
+    {
+        "id": 54,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Nasir bhai is talking with Karim chacha, the caretaker. He later tells you Karim chacha's family has lived in this valley for generations, long before any bungalows were built.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "The caretaker knows more than he lets on." } ] } ]
+    },
+    {
+        "id": 55,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Oli is ecstatic. The post-storm weather is perfect for flying his drone. He's planning a full aerial survey of the property, especially the dense jungle behind the bungalow.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Time to get a bird's-eye view." } ] } ]
+    },
+    {
+        "id": 56,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Ahsanul Mama is reading a book on local tribal history from the bungalow's library. He remarks that the Chakma people have a deep spiritual connection to this land.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "A little local knowledge could be useful." } ] } ]
+    },
+    {
+        "id": 57,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You overhear Mr. Irfan on the phone, his voice tense. He mentions a 'deal going sour' and 'unexpected complications' that have nothing to do with a land dispute.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "So it's not about the land after all." } ] } ]
+    },
+    {
+        "id": 58,
+        "type": "NON_INTERACTIVE",
+        "scenario": "While walking the perimeter of the lawn, you find a small, intricately woven bamboo flute lying in the grass. It looks like it was dropped recently.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "A clue, or just litter?" } ] } ]
+    },
+    {
+        "id": 59,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The group of Chakma youths from the market are seen again at the bottom of the hill near the main gate. They don't look hostile, merely watchful.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Friends or foes? It's hard to tell." } ] } ]
+    },
+    {
+        "id": 60,
+        "type": "NON_INTERACTIVE",
+        "scenario": "A package arrives for Mr. Irfan. It's a long, narrow box. He quickly takes it inside, looking annoyed that you saw it.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "What's in the box?!" } ] } ]
+    },
+    {
+        "id": 61,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Oli shows you his drone footage. From above, you can see a faint trail leading from the back of the bungalow deep into the jungle, towards a series of caves.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "A secret path is revealed." } ] } ]
+    },
+    {
+        "id": 62,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Nasir bhai points out that for a man worried about a land dispute, Mr. Irfan has surprisingly little security. Just one old caretaker for a large, isolated property.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "He's either very confident or the threat isn't what he claims." } ] } ]
+    },
+    {
+        "id": 63,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The generator for the bungalow sputters and dies, plunging the house into silence before the emergency lights kick in. Karim chacha says it's been acting up.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Things are never easy, are they?" } ] } ]
+    },
+    {
+        "id": 64,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Fakhruddin finds a strange symbol crudely painted on the back gate. Karim chacha quickly scrubs it off, saying it's just local kids. Too quickly.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Definitely not just kids." } ] } ]
+    },
+    {
+        "id": 65,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Ahsanul Mama suggests a walk to the local village. He believes a friendly gesture might help ease the tension with the locals.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "A peace offering might be a good idea." } ] } ]
+    },
+    {
+        "id": 66,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You see Karim chacha sneaking into the jungle with a small bundle. He returns empty-handed a few minutes later, looking over his shoulder.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "The caretaker is definitely up to something." } ] } ]
+    },
+    {
+        "id": 67,
+        "type": "NON_INTERACTIVE",
+        "scenario": "A fierce argument breaks out between Mr. Irfan and someone on his phone. You can't make out the words, but the tone is angry and desperate.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Mr. Irfan is in over his head." } ] } ]
+    },
+    {
+        "id": 68,
+        "type": "NON_INTERACTIVE",
+        "scenario": "While exploring, you find an old, rusted Tribal Arrowhead half-buried in the soil of the flowerbeds. It looks ancient.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "A relic from a forgotten time." } ] } ]
+    },
+    {
+        "id": 69,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Oli's drone nearly gets taken out by a large eagle. He lands it just in time, his hands shaking. The jungle protects its own.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Even the wildlife is hostile here." } ] } ]
+    },
+    {
+        "id": 70,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Nasir bhai identifies a rare Hill Flower growing near the bungalow. He says local tribes use it to make a powerful sedative.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "That sounds both useful and dangerous." } ] } ]
+    },
+    {
+        "id": 71,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The internet connection flickers and dies. The bungalow is now completely cut off from the outside world. Oli is not happy.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Well, so much for calling for help." } ] } ]
+    },
+    {
+        "id": 72,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Fakhruddin is convinced he's being followed. He says he keeps seeing the same Chakma youth from the market wherever he goes.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Is he being paranoid, or perceptive?" } ] } ]
+    },
+    {
+        "id": 73,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Mr. Irfan announces he has an urgent meeting and leaves in a hurry, telling you all to 'enjoy the peace and quiet'.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Somehow, 'peace and quiet' seems unlikely." } ] } ]
+    },
+    {
+        "id": 74,
+        "type": "NON_INTERACTIVE",
+        "scenario": "With Mr. Irfan gone, the atmosphere feels different. Less tense, but also more isolated and vulnerable.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "The calm before the storm?" } ] } ]
+    },
+    {
+        "id": 75,
+        "type": "NON_INTERACTIVE",
+        "scenario": "A thick evening fog rolls up the valley, swallowing the hills and isolating the bungalow in a sea of white. It's beautiful, but unnerving.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "You can't see a thing out there." } ] } ]
+    },
+    {
+        "id": 76,
+        "type": "INTERACTIVE",
+        "scenario": "With Mr. Irfan out, Nasir bhai suggests searching his office for clues. The door is unlocked.",
+        "options": [
+            { "action": "Search the office", "outcomes": [
+                { "type": "REWARD", "flavor": "You find a diary with coded entries. It'll take time to crack, but it feels important.", "item": "Encoded Diary", "quantity": 1, "chance": 40 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "You knock over a vase, alerting Karim chacha. You bribe him with one of your items to stay quiet.", "chance": 30 },
+                { "type": "ADVENTURE_ENDS", "flavor": "Mr. Irfan returns unexpectedly. He is not pleased. He kicks you all out immediately.", "chance": 30 }
+            ]},
+            { "action": "Respect his privacy", "outcomes": [
+                { "type": "NOTHING", "flavor": "You decide it's a bad idea. Snooping could make a tense situation worse.", "chance": 70 },
+                { "type": "ITEM_LOSS_ALL", "flavor": "While you debate, Karim chacha locks the door. He looks at you suspiciously, and later you find your items are gone.", "chance": 30 }
+            ]}
+        ]
+    },
+    {
+        "id": 77,
+        "type": "INTERACTIVE",
+        "scenario": "Oli's drone spotted a small, hidden cave on the cliff face behind the bungalow.",
+        "options": [
+            { "action": "Explore the cave", "outcomes": [
+                { "type": "REWARD", "flavor": "Inside the cave, you find a beautifully woven Chakma Scarf. It's warm and feels calming.", "item": "Chakma Scarf", "quantity": 1, "chance": 35 },
+                { "type": "NOTHING", "flavor": "The cave is damp and empty, aside from some very annoyed bats.", "chance": 40 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The trail is unstable. You slip and fall, ending your adventure with a sprained ankle.", "chance": 25 }
+            ]},
+            { "action": "Report it to Mama", "outcomes": [
+                { "type": "NOTHING", "flavor": "Ahsanul Mama advises caution, saying it's best not to trespass on what might be sacred ground.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 78,
+        "type": "INTERACTIVE",
+        "scenario": "You find a half-drawn map on a coffee table. A single spot on the property is marked with an 'X'.",
+        "options": [
+            { "action": "Follow the map", "outcomes": [
+                { "type": "REWARD", "flavor": "The 'X' leads to a hollow tree. Inside is a locked box containing a Suspicious Map.", "item": "Suspicious Map", "quantity": 1, "chance": 30 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "The map leads you into a thorny patch of jungle. You get scratched up and lose an item.", "chance": 70 }
+            ]},
+            { "action": "Show it to Fakhruddin", "outcomes": [
+                { "type": "NOTHING", "flavor": "Fakhruddin declares it's a wild goose chase. 'Probably just a doodle.'", "chance": 80 },
+                { "type": "ITEM_LOSS_ALL", "flavor": "Fakhruddin points out the map is a decoy. While you're distracted, someone steals your stuff.", "chance": 20 }
+            ]}
+        ]
+    },
+    {
+        "id": 79,
+        "type": "INTERACTIVE",
+        "scenario": "A Chakma youth cautiously approaches and offers you a small bottle filled with a dark, fragrant liquid.",
+        "options": [
+            { "action": "Accept the gift", "outcomes": [
+                { "type": "REWARD", "flavor": "You accept. Nasir bhai later identifies it as a powerful local Herbal Potion for healing.", "item": "Herbal Potion", "quantity": 1, "chance": 50 },
+                { "type": "NOTHING", "flavor": "You take the bottle but are too suspicious to drink it. It smells vaguely of herbs and mystery.", "chance": 50 }
+            ]},
+            { "action": "Refuse the gift", "outcomes": [
+                { "type": "NOTHING", "flavor": "You politely decline. The youth looks disappointed but not angry, and walks away.", "chance": 70 },
+                { "type": "ADVENTURE_ENDS", "flavor": "Your refusal is seen as a grave insult. The youth signals his friends, and you are surrounded.", "chance": 30 }
+            ]}
+        ]
+    },
+    {
+        "id": 80,
+        "type": "INTERACTIVE",
+        "scenario": "You find a large, unusual footprint in the mud. Nasir bhai suggests making a plaster cast of it.",
+        "options": [
+            { "action": "Make a cast", "outcomes": [
+                { "type": "REWARD", "flavor": "You make a clear cast of the print. It's definitely not human or any known local animal.", "item": "Mysterious Footprint Cast", "quantity": 1, "chance": 60 },
+                { "type": "NOTHING", "flavor": "You try to make a cast, but the mud is too wet and it collapses into a useless lump.", "chance": 40 }
+            ]},
+            { "action": "Ignore it", "outcomes": [
+                { "type": "NOTHING", "flavor": "It's probably just a weird mud puddle. You move on.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 81,
+        "type": "INTERACTIVE",
+        "scenario": "Karim chacha tells an old story about a tribal king's treasure hidden on this hill, protected by a powerful curse.",
+        "options": [
+            { "action": "Search for the treasure", "outcomes": [
+                { "type": "REWARD", "flavor": "You find a hidden chamber under the bungalow! Inside is a magnificent, jewel-encrusted chest.", "item": "Ancient Treasure Box", "quantity": 1, "chance": 10 },
+                { "type": "ADVENTURE_ENDS", "flavor": "You trigger a booby trap while searching. The ground collapses beneath you.", "chance": 30 },
+                { "type": "DESTROYED", "flavor": "You find the treasure, but the curse is real. A dark spirit emerges and your adventure is over.", "chance": 30 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "You find a fake treasure chest with a spring-loaded trap that snags one of your items.", "chance": 14 },
+                { "type": "ITEM_LOSS_ALL", "flavor": "The real guardians of the treasure find you. They don't kill you, but take everything you own as a warning.", "chance": 16 }
+            ]},
+            { "action": "Dismiss it as a myth", "outcomes": [
+                { "type": "NOTHING", "flavor": "It's a fun story, but you're not about to go chasing myths and curses.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 82,
+        "type": "INTERACTIVE",
+        "scenario": "The generator has failed completely, leaving the bungalow lit only by dim emergency lights.",
+        "options": [
+            { "action": "Try to fix it", "outcomes": [
+                { "type": "REWARD", "flavor": "You fiddle with the engine and miraculously get it working! Everyone hails you as a hero.", "item": "Energy Drink", "quantity": 2, "chance": 20 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "You get a nasty shock from a stray wire, dropping and breaking one of your items.", "chance": 80 }
+            ]},
+            { "action": "Wait for morning", "outcomes": [
+                { "type": "NOTHING", "flavor": "You decide it's too risky to mess with in the dark.", "chance": 60 },
+                { "type": "ADVENTURE_ENDS", "flavor": "In the darkness, someone sabotages the main door. You're trapped inside with no power.", "chance": 40 }
+            ]}
+        ]
+    },
+    {
+        "id": 83,
+        "type": "INTERACTIVE",
+        "scenario": "You find the long, narrow box delivered to Mr. Irfan, hastily hidden under his bed.",
+        "options": [
+            { "action": "Open the box", "outcomes": [
+                { "type": "REWARD", "flavor": "Inside is a high-tech satellite phone. This could be your only link to the outside world.", "item": "Satellite Phone", "quantity": 1, "chance": 25 },
+                { "type": "ADVENTURE_ENDS", "flavor": "It's a trap. A hidden needle pricks your finger, and you collapse from a fast-acting poison.", "chance": 75 }
+            ]},
+            { "action": "Leave it be", "outcomes": [
+                { "type": "NOTHING", "flavor": "Whatever is in that box is Mr. Irfan's business. You decide not to get involved.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 84,
+        "type": "INTERACTIVE",
+        "scenario": "Ahsanul Mama asks you to accompany him to the Chakma village to speak with their elder.",
+        "options": [
+            { "action": "Go with Mama", "outcomes": [
+                { "type": "REWARD", "flavor": "The elder explains the land was stolen by a rival faction, not Mr. Irfan. He gives you a Secret Key as a sign of trust.", "item": "Secret Key", "quantity": 1, "chance": 40 },
+                { "type": "NOTHING", "flavor": "The elder listens patiently but offers no information, saying it is a matter for his people to handle.", "chance": 60 }
+            ]},
+            { "action": "Stay behind", "outcomes": [
+                { "type": "ITEM_LOSS_ONE", "flavor": "While Mama is gone, someone takes advantage of the distraction and steals one of your items.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 85,
+        "type": "INTERACTIVE",
+        "scenario": "Using Fakhruddin's Binoculars, you spot a man on the opposite ridge, watching the bungalow.",
+        "options": [
+            { "action": "Signal to him", "outcomes": [
+                { "type": "NOTHING", "flavor": "You wave. The man immediately packs up his gear and disappears into the jungle.", "chance": 100 }
+            ]},
+            { "action": "Send Oli's drone", "outcomes": [
+                { "type": "REWARD", "flavor": "Oli flies the drone over. Before the man vanishes, the drone gets a clear shot of his face. It's someone you saw talking to Mr. Irfan in town.", "item": "Evidence Photo", "quantity": 1, "chance": 40 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "The man spots the drone and shoots it out of the sky with a pellet gun. The drone is lost, and you lose an item in the crash.", "chance": 60 }
+            ]}
+        ]
+    },
+    {
+        "id": 86,
+        "type": "INTERACTIVE",
+        "scenario": "You find the Bamboo Flute you saw earlier. It feels strangely warm.",
+        "options": [
+            { "action": "Play the flute", "outcomes": [
+                { "type": "NOTHING", "flavor": "You produce a series of horrible squawks. You are not a musician.", "chance": 60 },
+                { "type": "REWARD", "flavor": "A haunting melody fills the air. A young Chakma girl appears, saying you called her. She offers you a rare Hill Flower.", "item": "Hill Flower", "quantity": 1, "chance": 40 }
+            ]},
+            { "action": "Keep it as a souvenir", "outcomes": [
+                { "type": "REWARD", "flavor": "You pocket the flute. It's a nice memento of this trip.", "item": "Bamboo Flute", "quantity": 1, "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 87,
+        "type": "INTERACTIVE",
+        "scenario": "The storm has washed out the only road back to town. You are all stranded at the bungalow.",
+        "options": [
+            { "action": "Try to clear the road", "outcomes": [
+                { "type": "NOTHING", "flavor": "You try for hours, but the landslide is too big. You're not going anywhere without heavy machinery.", "chance": 100 }
+            ]},
+            { "action": "Hunker down and wait", "outcomes": [
+                { "type": "REWARD", "flavor": "You decide to wait. The extra time allows you to find a hidden compartment containing a Lifesaver.", "item": "Lifesaver", "quantity": 1, "chance": 25 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "Boredom leads to carelessness. You accidentally break one of your own items.", "chance": 75 }
+            ]}
+        ]
+    },
+    {
+        "id": 88,
+        "type": "INTERACTIVE",
+        "scenario": "Nasir bhai is examining the Tribal Arrowhead you found. He says there's a strange, sticky residue on the tip.",
+        "options": [
+            { "action": "Taste the residue", "outcomes": [
+                { "type": "ADVENTURE_ENDS", "flavor": "You lick the arrowhead. It's a fast-acting neurotoxin. Why would you do that? Your adventure ends.", "chance": 100 }
+            ]},
+            { "action": "Wash it off", "outcomes": [
+                { "type": "REWARD", "flavor": "You carefully wash the arrowhead. It's a nice, if slightly ominous, souvenir.", "item": "Tribal Arrowhead", "quantity": 1, "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 89,
+        "type": "INTERACTIVE",
+        "scenario": "You decode a line from Mr. Irfan's diary: 'The exchange is at midnight. They must not find the real prize.'",
+        "options": [
+            { "action": "Stake out the bungalow", "outcomes": [
+                { "type": "REWARD", "flavor": "You see Mr. Irfan exchanging a briefcase with the men from the ridge. You get a photo of the deal.", "item": "Evidence Photo", "quantity": 1, "chance": 35 },
+                { "type": "ADVENTURE_ENDS", "flavor": "You're spotted. The men are not happy to have witnesses. Your adventure ends violently.", "chance": 65 }
+            ]},
+            { "action": "Tell Ahsanul Mama", "outcomes": [
+                { "type": "NOTHING", "flavor": "Mama listens gravely and tells you all to lock your doors. He says this is far more dangerous than a land dispute.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 90,
+        "type": "INTERACTIVE",
+        "scenario": "Karim chacha offers you a cup of tea with a strange, sweet smell. He seems insistent that you drink it.",
+        "options": [
+            { "action": "Drink the tea", "outcomes": [
+                { "type": "ADVENTURE_ENDS", "flavor": "The tea is drugged with the sedative from the Hill Flower. You all pass out, and your adventure ends.", "chance": 90 },
+                { "type": "NOTHING", "flavor": "It's just really sweet tea. You feel a sugar rush, but nothing else happens.", "chance": 10 }
+            ]},
+            { "action": "Politely refuse", "outcomes": [
+                { "type": "NOTHING", "flavor": "You say you're not thirsty. Karim chacha looks annoyed but takes the tea away.", "chance": 70 },
+                { "type": "ITEM_LOSS_ALL", "flavor": "He 'accidentally' spills the tea all over your backpack, ruining everything inside.", "chance": 30 }
+            ]}
+        ]
+    },
+    {
+        "id": 91,
+        "type": "INTERACTIVE",
+        "scenario": "You find Fakhruddin's Binoculars left on the veranda.",
+        "options": [
+            { "action": "Borrow them for a look", "outcomes": [
+                { "type": "NOTHING", "flavor": "You scan the hills. It's a beautiful view, but nothing out of the ordinary.", "chance": 100 }
+            ]},
+            { "action": "Keep them", "outcomes": [
+                { "type": "REWARD", "flavor": "You decide finder's keepers. Fakhruddin will be mad, but these are nice.", "item": "Binoculars", "quantity": 1, "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 92,
+        "type": "INTERACTIVE",
+        "scenario": "The Secret Key from the elder fits a hidden lock on a statue in the garden.",
+        "options": [
+            { "action": "Unlock the compartment", "outcomes": [
+                { "type": "REWARD", "flavor": "Inside is the true deed to the land, proving it belongs to the Chakma tribe. This is the evidence you need!", "item": "Ancient Scroll", "quantity": 1, "chance": 45 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "The compartment is empty except for a spring-loaded ink trap that ruins one of your items.", "chance": 55 }
+            ]},
+            { "action": "Leave it locked", "outcomes": [
+                { "type": "NOTHING", "flavor": "You decide not to use the key without the elder's permission. It's a matter of trust.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 93,
+        "type": "INTERACTIVE",
+        "scenario": "You confront Karim chacha. He breaks down, admitting Mr. Irfan is a smuggler and the 'land dispute' is a cover story.",
+        "options": [
+            { "action": "Convince him to help you", "outcomes": [
+                { "type": "REWARD", "flavor": "He agrees to help expose Mr. Irfan and gives you Padlocks to secure a key room.", "item": "Padlock", "quantity": 2, "chance": 40 },
+                { "type": "ADVENTURE_ENDS", "flavor": "He pretends to agree, but leads you into a trap set by Mr. Irfan's men.", "chance": 60 }
+            ]},
+            { "action": "Threaten to expose him", "outcomes": [
+                { "type": "NOTHING", "flavor": "He begs you not to, saying his family is in danger. He promises to stay out of your way.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 94,
+        "type": "INTERACTIVE",
+        "scenario": "A helicopter is approaching the bungalow. It could be Mr. Irfan's partners, or the authorities.",
+        "options": [
+            { "action": "Hide and observe", "outcomes": [
+                { "type": "NOTHING", "flavor": "It's Mr. Irfan's partners. They load several crates and leave. You remain unseen.", "chance": 100 }
+            ]},
+            { "action": "Signal for help", "outcomes": [
+                { "type": "ADVENTURE_ENDS", "flavor": "It's Mr. Irfan's partners. They see you signalling and are not interested in leaving witnesses.", "chance": 80 },
+                { "type": "REWARD", "flavor": "It's the police! Your satellite phone call worked. The criminals are arrested, and you're rewarded handsomely.", "amount": 250000, "chance": 20 }
+            ]}
+        ]
+    },
+    {
+        "id": 95,
+        "type": "INTERACTIVE",
+        "scenario": "The final confrontation. Mr. Irfan and his smugglers have you cornered. Ahsanul Mama tries to reason with them.",
+        "options": [
+            { "action": "Create a diversion", "outcomes": [
+                { "type": "REWARD", "flavor": "You knock over a priceless artifact, creating chaos. You all manage to overpower the smugglers.", "item": "Rare Item", "quantity": 1, "chance": 25 },
+                { "type": "ITEM_LOSS_ALL", "flavor": "Your diversion fails. They round you all up and take all of your belongings.", "chance": 75 }
+            ]},
+            { "action": "Surrender peacefully", "outcomes": [
+                { "type": "NOTHING", "flavor": "You surrender. They lock you in the cellar, but at least you're safe for the moment.", "chance": 50 },
+                { "type": "DESTROYED", "flavor": "They have no intention of leaving loose ends. Your decision to surrender was a fatal mistake.", "chance": 50 }
+            ]}
+        ]
+    },
+    {
+        "id": 96,
+        "type": "INTERACTIVE",
+        "scenario": "Oli reveals he hid his drone on the roof and it has been recording everything.",
+        "options": [
+            { "action": "Upload the footage", "outcomes": [
+                { "type": "REWARD", "flavor": "You find a weak internet signal and upload the incriminating footage. The criminals' fates are sealed!", "amount": 150000, "chance": 100 }
+            ]},
+            { "action": "Use it as a bargaining chip", "outcomes": [
+                { "type": "ITEM_LOSS_ALL", "flavor": "They laugh and use a signal jammer, rendering the drone useless. They then take all your stuff.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 97,
+        "type": "INTERACTIVE",
+        "scenario": "In the aftermath, the Chakma elder offers you a gift for proving their land claim.",
+        "options": [
+            { "action": "Accept a rare orchid", "outcomes": [
+                { "type": "REWARD", "flavor": "He gives you an incredibly rare and beautiful Hill Flower. A collector would pay a fortune for it.", "item": "Hill Flower", "quantity": 1, "chance": 100 }
+            ]},
+            { "action": "Accept their friendship", "outcomes": [
+                { "type": "NOTHING", "flavor": "You tell him their friendship is reward enough. You have made a powerful ally in these hills.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 98,
+        "type": "INTERACTIVE",
+        "scenario": "Nasir bhai has to return to his hospital duties. He praises your bravery before he leaves.",
+        "options": [
+            { "action": "Ask for a parting gift", "outcomes": [
+                { "type": "REWARD", "flavor": "He laughs and hands you a brand new first-aid kit. 'Try not to need this,' he says.", "item": "First-Aid Kit", "quantity": 1, "chance": 100 }
+            ]},
+            { "action": "Wish him well", "outcomes": [
+                { "type": "NOTHING", "flavor": "You thank him for his help and wish him a safe journey back.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 99,
+        "type": "INTERACTIVE",
+        "scenario": "The police offer you a share of the reward money for capturing the smugglers.",
+        "options": [
+            { "action": "Accept the money", "outcomes": [
+                { "type": "REWARD", "flavor": "You accept the reward. Crime fighting pays well!", "amount": 750000, "chance": 100 }
+            ]},
+            { "action": "Donate it to the village", "outcomes": [
+                { "type": "NOTHING", "flavor": "You ask for the money to be donated to the local Chakma village. You earn their undying respect.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 100,
+        "type": "INTERACTIVE",
+        "scenario": "As you pack up to leave Bandarban, you look back at the 'Meghaloy Bungalow'. It was meant to be a relaxing vacation.",
+        "options": [
+            { "action": "Laugh about the chaos", "outcomes": [
+                { "type": "NOTHING", "flavor": "You all share a laugh. It was dangerous, but it was one of the most exciting adventures of your lives.", "chance": 100 }
+            ]},
+            { "action": "Vow to never return", "outcomes": [
+                { "type": "NOTHING", "flavor": "Fakhruddin declares he's only taking beach vacations from now on. You don't blame him.", "chance": 100 }
+            ]}
+        ]
+    }
+]

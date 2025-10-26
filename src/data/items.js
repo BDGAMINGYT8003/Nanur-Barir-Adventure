@@ -21,4 +21,18 @@ export const items = {
     "Ancient Scroll": "<:AncientScroll:1431696300235292752>",
     "Rare Item": "<:RareItem:1431696481080840212>",
     "Coins": "<:Coins:1431696484088156190>",
+    "Encoded Diary": "<:EncodedDiary:123456789012345678>",
+    "Chakma Scarf": "<:ChakmaScarf:123456789012345678>",
+    "Suspicious Map": "<:SuspiciousMap:123456789012345678>",
+    "Herbal Potion": "<:HerbalPotion:123456789012345678>",
+    "Mysterious Footprint Cast": "<:MysteriousFootprintCast:123456789012345678>",
+    "Ancient Treasure Box": "<:AncientTreasureBox:123456789012345678>",
+    "Satellite Phone": "<:SatellitePhone:123456789012345678>",
+    "Secret Key": "<:SecretKey:123456789012345678>",
+    "Evidence Photo": "<:EvidencePhoto:123456789012345678>",
+    "Hill Flower": "<:HillFlower:123456789012345678>",
+    "Bamboo Flute": "<:BambooFlute:123456789012345678>",
+    "Tribal Arrowhead": "<:TribalArrowhead:123456789012345678>",
+    "Binoculars": "<:Binoculars:123456789012345678>",
+    "First-Aid Kit": "<:FirstAidKit:123456789012345678>"
 };

@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } from 'discord.js';
+import { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, AttachmentBuilder } from 'discord.js';
 
 const funFacts = [
     "The house was built on an ancient burial ground. Classic.",
@@ -17,8 +17,10 @@ export default {
         const embed = new EmbedBuilder()
             .setTitle('Choose an Adventure')
             .setDescription(
-                '**The Haunting of Nanur Bari**\n' +
-                'Depart with Moin, Oli, and Fakhruddin into a world filled with rural frights and family secrets!\n\n' +
+                'Select an adventure from the dropdown menu below. Each adventure has unique stories, items, and risks!\n\n' +
+                '**Adventures Available:**\n' +
+                '- The Haunting of Nanur Bari\n' +
+                '- The Mystery of Meghaloy Bungalow\n\n' +
                 '**Possible Rewards**\n' +
                 '<:GhostlyLantern:1431694741313032284> <:HauntedRing:1431695057874063614> <:AncientCoin:1431695460808265780> <:Lifesaver:1431695902602432613> <:RareItem:1431696481080840212> <:Coins:1431696484088156190>'
             )
@@ -27,10 +29,21 @@ export default {
 
         const row = new ActionRowBuilder()
             .addComponents(
-                new ButtonBuilder()
-                    .setCustomId('start_adventure')
-                    .setLabel('Start Adventure')
-                    .setStyle(ButtonStyle.Primary),
+                new StringSelectMenuBuilder()
+                    .setCustomId('select_adventure')
+                    .setPlaceholder('Select an adventure...')
+                    .addOptions([
+                        {
+                            label: 'The Haunting of Nanur Bari',
+                            description: 'A spooky adventure in a haunted ancestral home.',
+                            value: 'spooky_adventure',
+                        },
+                        {
+                            label: 'The Mystery of Meghaloy Bungalow',
+                            description: 'A thrilling mystery in the hills of Bandarban.',
+                            value: 'bandarban_adventure',
+                        },
+                    ]),
             );
 
         await interaction.reply({ embeds: [embed], components: [row], files: [image] });
