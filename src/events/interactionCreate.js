@@ -1,16 +1,9 @@
-import { Events, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, AttachmentBuilder } from 'discord.js';
+import { Events, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, StringSelectMenuBuilder, AttachmentBuilder } from 'discord.js';
 import { createSession, getSession, advanceSession, getCurrentNode, endSession } from '../utils/adventureManager.js';
 import db from '../utils/database.js';
 import logger from '../utils/logger.js';
 import { items as itemData } from '../data/items.js';
-
-const funFacts = [
-    "The house was built on an ancient burial ground. Classic.",
-    "The locals say the original owner of the house just vanished one day.",
-    "The well in the backyard is rumored to be bottomless.",
-    "The jungle is said to be home to a creature that walks without a head.",
-    "The clocks in the house are all stopped at 3:13 AM, the 'devil's hour'.",
-];
+import { createAdventureEmbed } from '../commands/adventure/adventure.js';
 
 const adventureNames = {
     'spooky_adventure': 'The Haunting of Nanur Bari',
@@ -18,7 +11,7 @@ const adventureNames = {
 };
 
 async function showAdventureSummary(interaction, session) {
-    const image = new AttachmentBuilder('assets/spooky.png');
+    const { image } = createAdventureEmbed(session.adventure);
     let backpack = '';
     if (session.rewards.coins > 0) {
         db.updateUserWallet(session.userId, session.rewards.coins);
@@ -47,8 +40,8 @@ async function showAdventureSummary(interaction, session) {
             `**Backpack**\n${backpack}\n\n` +
             `**Lost Items**\n${lostItems}`
         )
-        .setImage('attachment://spooky.png')
-        .setFooter({ text: `Fun Fact: ${funFacts[Math.floor(Math.random() * funFacts.length)]}` });
+        .setImage(image.attachment.name)
+        .setFooter({ text: 'Better luck next time!' });
 
     await interaction.editReply({ embeds: [embed], components: [], files: [image] });
     endSession(session.userId);
@@ -104,17 +97,47 @@ export default {
                 await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
             }
         } else if (interaction.isStringSelectMenu()) {
-            if (interaction.customId === 'select_adventure') {
+            if (interaction.customId === 'select_adventure_menu') {
                 await interaction.deferUpdate();
                 const adventureId = interaction.values[0];
-                const session = createSession(interaction.user.id, adventureId);
-                await handleAdventureNode(interaction, session);
+                const { embed, image } = createAdventureEmbed(adventureId);
+
+                const selectMenu = new StringSelectMenuBuilder()
+                    .setCustomId('select_adventure_menu')
+                    .setPlaceholder('Select an adventure to view details...')
+                    .addOptions([
+                        {
+                            label: 'The Haunting of Nanur Bari',
+                            description: 'A spooky adventure in a haunted ancestral home.',
+                            value: 'spooky_adventure',
+                        },
+                        {
+                            label: 'The Mystery of Meghaloy Bungalow',
+                            description: 'A thrilling mystery in the hills of Bandarban.',
+                            value: 'bandarban_adventure',
+                        },
+                    ]);
+
+                const startButton = new ButtonBuilder()
+                    .setCustomId(`start_adventure_button_${adventureId}`)
+                    .setLabel('Start Adventure')
+                    .setStyle(ButtonStyle.Primary);
+
+                const row1 = new ActionRowBuilder().addComponents(selectMenu);
+                const row2 = new ActionRowBuilder().addComponents(startButton);
+
+                await interaction.editReply({ embeds: [embed], components: [row1, row2], files: [image] });
             }
         } else if (interaction.isButton()) {
             await interaction.deferUpdate();
             const session = getSession(interaction.user.id);
 
-            if (interaction.customId.startsWith('adventure_option_')) {
+            if (interaction.customId.startsWith('start_adventure_button_')) {
+                const adventureId = interaction.customId.split('_').slice(3).join('_');
+                db.updateUserLastAdventure(interaction.user.id, adventureId);
+                const newSession = createSession(interaction.user.id, adventureId);
+                await handleAdventureNode(interaction, newSession);
+            } else if (interaction.customId.startsWith('adventure_option_')) {
                 if (!session) return await interaction.editReply({ content: "This adventure has ended.", components: [] });
 
                 const optionIndex = parseInt(interaction.customId.split('_').pop());

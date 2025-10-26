@@ -2,19 +2,21 @@ import Database from 'better-sqlite3';
 
 const db = new Database('nanur-barir-adventure.db');
 
-// Check if the balance column exists, if so, rename it to wallet
 const tableInfo = db.prepare("PRAGMA table_info(users)").all();
-if (tableInfo.some(column => column.name === 'balance')) {
+const columns = tableInfo.map(column => column.name);
+
+// Migrations
+if (columns.includes('balance')) {
     db.exec('ALTER TABLE users RENAME COLUMN balance TO wallet');
 }
-
-// Add bank and bank_capacity columns if they don't exist
-const columns = tableInfo.map(column => column.name);
 if (!columns.includes('bank')) {
     db.exec('ALTER TABLE users ADD COLUMN bank INTEGER DEFAULT 0');
 }
 if (!columns.includes('bank_capacity')) {
     db.exec('ALTER TABLE users ADD COLUMN bank_capacity INTEGER DEFAULT 10000');
+}
+if (!columns.includes('last_adventure')) {
+    db.exec("ALTER TABLE users ADD COLUMN last_adventure TEXT DEFAULT 'spooky_adventure'");
 }
 
 
@@ -23,7 +25,8 @@ db.exec(`
         id TEXT PRIMARY KEY,
         wallet INTEGER DEFAULT 0,
         bank INTEGER DEFAULT 0,
-        bank_capacity INTEGER DEFAULT 10000
+        bank_capacity INTEGER DEFAULT 10000,
+        last_adventure TEXT DEFAULT 'spooky_adventure'
     );
 `);
 
@@ -40,13 +43,17 @@ function getUser(id) {
     let user = db.prepare('SELECT * FROM users WHERE id = ?').get(id);
     if (!user) {
         db.prepare('INSERT INTO users (id) VALUES (?)').run(id);
-        user = { id, wallet: 0, bank: 0, bank_capacity: 10000 };
+        user = { id, wallet: 0, bank: 0, bank_capacity: 10000, last_adventure: 'spooky_adventure' };
     }
     return user;
 }
 
 function updateUserWallet(id, amount) {
     db.prepare('UPDATE users SET wallet = wallet + ? WHERE id = ?').run(amount, id);
+}
+
+function updateUserLastAdventure(id, adventure) {
+    db.prepare('UPDATE users SET last_adventure = ? WHERE id = ?').run(adventure, id);
 }
 
 function getUserInventory(id) {
@@ -77,4 +84,4 @@ function clearUserInventory(id) {
     db.prepare('DELETE FROM inventories WHERE user_id = ?').run(id);
 }
 
-export default { getUser, updateUserWallet, getUserInventory, updateUserInventory, removeUserItem, clearUserInventory };
+export default { getUser, updateUserWallet, getUserInventory, updateUserInventory, removeUserItem, clearUserInventory, updateUserLastAdventure };
