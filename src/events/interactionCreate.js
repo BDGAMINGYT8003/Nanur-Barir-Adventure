@@ -8,6 +8,7 @@ import { createAdventureEmbed } from '../commands/adventure/adventure.js';
 const adventureNames = {
     'spooky_adventure': 'The Haunting of Nanur Bari',
     'bandarban_adventure': 'The Mystery of Meghaloy Bungalow',
+    'himalayan_adventure': 'The Himalayan Heist',
 };
 
 async function showAdventureSummary(interaction, session) {
@@ -115,6 +116,11 @@ export default {
                             label: 'The Mystery of Meghaloy Bungalow',
                             description: 'A thrilling mystery in the hills of Bandarban.',
                             value: 'bandarban_adventure',
+                        },
+                        {
+                            label: 'The Himalayan Heist',
+                            description: 'A high-altitude smuggling mystery.',
+                            value: 'himalayan_adventure',
                         },
                     ]);
 

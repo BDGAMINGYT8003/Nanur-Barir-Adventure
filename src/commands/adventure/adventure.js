@@ -15,12 +15,27 @@ const adventureDetails = {
         rewards: '<:EncodedDiary:123456789012345678> <:ChakmaScarf:123456789012345678> <:AncientTreasureBox:123456789012345678> <:SatellitePhone:123456789012345678> <:RareItem:1431696481080840212> <:Coins:1431696484088156190>',
         funFact: 'Bandarban is home to the highest peaks in Bangladesh, covered in dense, mysterious forests.',
         thumbnail: 'attachment://bandarban.png'
+    },
+    'himalayan_adventure': {
+        name: 'The Himalayan Heist',
+        description: 'Embark on a perilous journey with the gang to uncover a smuggling ring in the treacherous Himalayas!',
+        rewards: '<:AncientStoneStatue:123456789012345678> <:SherpasRope:123456789012345678> <:FrozenCompass:123456789012345678> <:YetiFurSample:123456789012345678> <:RareItem:1431696481080840212> <:Coins:1431696484088156190>',
+        funFact: 'The Himalayas are home to the legendary Yeti, but you are more likely to find a snow leopard.',
+        thumbnail: 'attachment://himalayan.png'
     }
 };
 
 function createAdventureEmbed(adventureId) {
     const details = adventureDetails[adventureId];
-    const image = new AttachmentBuilder(`./assets/${adventureId === 'spooky_adventure' ? 'spooky.png' : 'bandarban.png'}`, { name: details.thumbnail.split('//')[1] });
+    let imageName;
+    if (adventureId === 'spooky_adventure') {
+        imageName = 'spooky.png';
+    } else if (adventureId === 'bandarban_adventure') {
+        imageName = 'bandarban.png';
+    } else {
+        imageName = 'himalayan.png';
+    }
+    const image = new AttachmentBuilder(`./assets/${imageName}`, { name: details.thumbnail.split('//')[1] });
 
     const embed = new EmbedBuilder()
         .setTitle('Choose an Adventure')
@@ -58,6 +73,11 @@ export default {
                     label: 'The Mystery of Meghaloy Bungalow',
                     description: 'A thrilling mystery in the hills of Bandarban.',
                     value: 'bandarban_adventure',
+                },
+                {
+                    label: 'The Himalayan Heist',
+                    description: 'A high-altitude smuggling mystery.',
+                    value: 'himalayan_adventure',
                 },
             ]);
 

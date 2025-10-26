@@ -34,5 +34,15 @@ export const items = {
     "Bamboo Flute": "<:BambooFlute:123456789012345678>",
     "Tribal Arrowhead": "<:TribalArrowhead:123456789012345678>",
     "Binoculars": "<:Binoculars:123456789012345678>",
-    "First-Aid Kit": "<:FirstAidKit:123456789012345678>"
+    "First-Aid Kit": "<:FirstAidKit:123456789012345678>",
+    "Sherpa's Rope": "<:SherpasRope:123456789012345678>",
+    "Old Mountaineer's Journal": "<:OldMountaineersJournal:123456789012345678>",
+    "Monk's Herbal Tea": "<:MonksHerbalTea:123456789012345678>",
+    "Mysterious Cipher": "<:MysteriousCipher:123456789012345678>",
+    "Ancient Stone Statue": "<:AncientStoneStatue:123456789012345678>",
+    "Frozen Compass": "<:FrozenCompass:123456789012345678>",
+    "Smuggler's Map": "<:SmugglersMap:123456789012345678>",
+    "Yeti Fur Sample": "<:YetiFurSample:123456789012345678>",
+    "Yak Wool Scarf": "<:YakWoolScarf:123456789012345678>",
+    "Tibetan Prayer Flag": "<:TibetanPrayerFlag:123456789012345678>"
 };

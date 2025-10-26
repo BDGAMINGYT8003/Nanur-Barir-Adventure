@@ -1,0 +1,509 @@
+[
+    {
+        "id": 101,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The thin, bitingly cold air of the Himalayas is a stark contrast to your previous adventures. The wind whistles through the prayer flags of a tiny monastery perched on the mountainside.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 102,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Fakhruddin, wrapped in three layers of clothing, mutters that he can't feel his nose. He is convinced a yeti has already marked him as its first snack.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 103,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Oli is struggling to get a signal for his drone. The magnetic interference from the mountains is making it difficult. He complains that he can't solve crimes without his eye in the sky.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 104,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Nasir bhai points out a set of large, unusual tracks in the snow. He says they don't match any known local fauna, but dismisses them as a trick of the wind.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 105,
+        "type": "NON_INTERACTIVE",
+        "scenario": "An old monk, spinning a prayer wheel, watches you with unsettlingly calm eyes. He doesn't say a word, but his gaze follows you as you pass.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 106,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The local tea house is buzzing with rumors of a foreign expedition that went missing weeks ago. They were supposedly searching for a legendary monastery.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 107,
+        "type": "NON_INTERACTIVE",
+        "scenario": "A powerful gust of wind nearly rips the map from your hands. The mountains seem actively hostile today.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 108,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You find a single, spent bullet casing lying pristine on a fresh patch of snow. It's modern, and very out of place.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 109,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Fakhruddin trips and rolls a good twenty feet down a snowy slope. He's fine, but now he's convinced the mountain itself is trying to kill him.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 110,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Oli manages to get his drone airborne for a few minutes. The footage shows a vast, empty expanse of snow and rock, but for a split second, a figure is seen ducking behind a boulder.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 111,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Your group's Sherpa guide seems nervous. He keeps looking over his shoulder and chanting softly under his breath.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 112,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Nasir bhai finds a small patch of blood on the snow. He analyzes it and says it's not human, but it's not from any animal he can identify.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 113,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The silence of the Himalayas is absolute. There are no birds, no insects, just the sound of your own breathing and the crunch of your boots in the snow.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 114,
+        "type": "NON_INTERACTIVE",
+        "scenario": "A rival group of trekkers, grim-faced and heavily equipped, passes you on the trail without a word. They look more like mercenaries than tourists.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 115,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You find a tattered piece of a modern, high-tech jacket snagged on a rock. It has a logo of a corporation known for morally ambiguous research.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 116,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Fakhruddin swears he heard a low, guttural roar echo through the valley. Oli claims it was just the wind, but he looks a little pale.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 117,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The temperature is dropping rapidly as the sun begins to set behind the peaks. The shadows grow long and menacing.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 118,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Your satellite phone buzzes with static. A distorted voice breaks through for a second, saying '...ice cave... betray...' before the signal dies completely.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 119,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Nasir bhai is studying the local flora. He finds a plant that is said to cause vivid hallucinations if ingested. Fun.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 120,
+        "type": "NON_INTERACTIVE",
+        "scenario": "The path ahead is blocked by a recent avalanche. Your guide says there is another way, but it is an ancient and seldom-used trail.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 121,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You see a lone prayer flag tied to a barren tree, flapping violently in the wind. It seems to be marking a spot of some significance.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 122,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Oli is trying to enhance the drone footage. He manages to clear up the image of the figure, revealing they were carrying a long, cylindrical object.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Despite the intrigue, your situation remains unaffected." } ] } ]
+    },
+    {
+        "id": 123,
+        "type": "NON_INTERACTIVE",
+        "scenario": "Fakhruddin has a nightmare about being chased by a snowman with sharp, pointy teeth. He now views all snow with deep suspicion.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 124,
+        "type": "NON_INTERACTIVE",
+        "scenario": "You find a perfectly preserved fossil in a rock face. It's a creature unknown to modern science. Nasir bhai is fascinated.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 125,
+        "type": "NON_INTERACTIVE",
+        "scenario": "A sudden, disorienting whiteout blizzard descends, reducing visibility to zero. Your guide huddles you all together, warning you not to move an inch.",
+        "options": [ { "action": "Next", "outcomes": [ { "type": "NOTHING", "flavor": "Nothing interesting happened." } ] } ]
+    },
+    {
+        "id": 126,
+        "type": "INTERACTIVE",
+        "scenario": "You come to a deep chasm spanned by a rickety rope bridge. Your guide says it's the only way across.",
+        "options": [
+            { "action": "Cross the bridge", "outcomes": [
+                { "type": "REWARD", "flavor": "You make it across, heart pounding. The guide is impressed and gives you a sturdy Sherpa's Rope.", "item": "Sherpa's Rope", "quantity": 1, "chance": 25 },
+                { "type": "NOTHING", "flavor": "You cross one by one, trying not to look down. It's terrifying but you all make it safely.", "chance": 45 },
+                { "type": "ADVENTURE_ENDS", "flavor": "A rope snaps halfway across. Your adventure ends with a long fall.", "chance": 30 }
+            ]},
+            { "action": "Find another way", "outcomes": [
+                { "type": "ITEM_LOSS_ONE", "flavor": "You spend hours searching for another path, wasting precious daylight and supplies. You lose an item in the process.", "chance": 70 },
+                { "type": "NOTHING", "flavor": "There is no other way. You're forced to go back and cross the bridge anyway.", "chance": 30 }
+            ]}
+        ]
+    },
+    {
+        "id": 127,
+        "type": "INTERACTIVE",
+        "scenario": "You find the abandoned campsite of the missing expedition. A single tent remains, flapping in the wind.",
+        "options": [
+            { "action": "Search the tent", "outcomes": [
+                { "type": "REWARD", "flavor": "Inside, you find an Old Mountaineer's Journal. The last entry speaks of betrayal and a hidden cave.", "item": "Old Mountaineer's Journal", "quantity": 1, "chance": 35 },
+                { "type": "NOTHING", "flavor": "The tent is empty except for some frozen, useless supplies.", "chance": 45 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The tent is a trap. As you enter, the rival expedition members ambush you.", "chance": 20 }
+            ]},
+            { "action": "Leave it alone", "outcomes": [
+                { "type": "NOTHING", "flavor": "You decide not to disturb what could be the last resting place of the missing explorers.", "chance": 80 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "As you turn to leave, you realize someone has pickpocketed you while you were distracted.", "chance": 20 }
+            ]}
+        ]
+    },
+    {
+        "id": 128,
+        "type": "INTERACTIVE",
+        "scenario": "A monk from the nearby monastery offers you a steaming cup of tea. He says it will help with the altitude sickness.",
+        "options": [
+            { "action": "Drink the tea", "outcomes": [
+                { "type": "REWARD", "flavor": "The tea is delicious and warms you to your core. You feel refreshed and energized.", "item": "Monk's Herbal Tea", "quantity": 1, "chance": 40 },
+                { "type": "NOTHING", "flavor": "It's just tea. It's nice and warm, but has no magical properties.", "chance": 40 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The tea is drugged. You all fall into a deep sleep, and your adventure ends.", "chance": 20 }
+            ]},
+            { "action": "Politely refuse", "outcomes": [
+                { "type": "NOTHING", "flavor": "You thank the monk but decline. He simply nods and moves on.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 129,
+        "type": "INTERACTIVE",
+        "scenario": "You find a small, leather-bound book half-buried in the snow. Its pages are filled with a complex, handwritten cipher.",
+        "options": [
+            { "action": "Take the book", "outcomes": [
+                { "type": "REWARD", "flavor": "You pocket the book. It's a Mysterious Cipher that could hold the key to this whole affair.", "item": "Mysterious Cipher", "quantity": 1, "chance": 100 }
+            ]},
+            { "action": "Leave it", "outcomes": [
+                { "type": "NOTHING", "flavor": "It's probably just some trekker's diary. You decide not to meddle.", "chance": 70 },
+                { "type": "ADVENTURE_ENDS", "flavor": "As you touch it, you hear a click. The book was attached to a pressure-plate trap. Bad luck.", "chance": 30 }
+            ]}
+        ]
+    },
+    {
+        "id": 130,
+        "type": "INTERACTIVE",
+        "scenario": "Your guide points to a cave entrance high on a cliff. He whispers it's a sacred place, rumored to hold the 'Eye of the Mountain', a mythical stone statue.",
+        "options": [
+            { "action": "Climb to the cave", "outcomes": [
+                { "type": "REWARD", "flavor": "You find it! A small, unassuming statue that seems to hum with a strange energy. You have found the Ancient Stone Statue!", "item": "Ancient Stone Statue", "quantity": 1, "chance": 10 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The climb is too treacherous. A loose rock gives way, and your adventure ends abruptly.", "chance": 30 },
+                { "type": "DESTROYED", "flavor": "The statue is guarded by an ancient spirit. It is not happy to see you. Your adventure is catastrophically over.", "chance": 30 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "You make it to the cave, but it's empty. You lose one item during the difficult descent.", "chance": 14 },
+                { "type": "ITEM_LOSS_ALL", "flavor": "The rival mercenaries were waiting for you at the cave. They take all your gear and leave you stranded.", "chance": 16 }
+            ]},
+            { "action": "Respect the sacred ground", "outcomes": [
+                { "type": "NOTHING", "flavor": "You decide not to disturb the sacred cave. Some things are better left as legends.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 131,
+        "type": "INTERACTIVE",
+        "scenario": "You find a frozen body in the snow, clearly a member of the missing expedition. A high-tech compass is clutched in their hand.",
+        "options": [
+            { "action": "Take the compass", "outcomes": [
+                { "type": "REWARD", "flavor": "You pry the Frozen Compass from their grasp. The needle spins wildly before pointing towards a specific, unnamed peak.", "item": "Frozen Compass", "quantity": 1, "chance": 40 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "As you take the compass, a piece of the ice shelf breaks off, and you drop one of your own items into the crevasse below.", "chance": 60 }
+            ]},
+            { "action": "Pay your respects", "outcomes": [
+                { "type": "NOTHING", "flavor": "You say a silent prayer for the fallen explorer and mark the location for later recovery.", "chance": 80 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The 'body' was a trap. It's a mannequin rigged with an explosive. The rival team is ruthless.", "chance": 20 }
+            ]}
+        ]
+    },
+    {
+        "id": 132,
+        "type": "INTERACTIVE",
+        "scenario": "Oli's drone spots a heat signature coming from a supposedly empty ice cave.",
+        "options": [
+            { "action": "Investigate the cave", "outcomes": [
+                { "type": "REWARD", "flavor": "You find the rival expedition's hidden base camp! You manage to snag a copy of their Smuggler's Map before retreating.", "item": "Smuggler's Map", "quantity": 1, "chance": 30 },
+                { "type": "ADVENTURE_ENDS", "flavor": "They were expecting you. You walk right into an ambush.", "chance": 70 }
+            ]},
+            { "action": "Fly the drone closer", "outcomes": [
+                { "type": "NOTHING", "flavor": "The drone gets a glimpse of armed men and high-tech equipment before it's spotted and has to pull back.", "chance": 60 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "They shoot the drone down. Oli is devastated, and you lose one item in the crash.", "chance": 40 }
+            ]}
+        ]
+    },
+    {
+        "id": 133,
+        "type": "INTERACTIVE",
+        "scenario": "You find a tuft of long, white fur snagged on a rock. It's coarse and unlike any animal fur you've ever seen.",
+        "options": [
+            { "action": "Collect the fur sample", "outcomes": [
+                { "type": "REWARD", "flavor": "You carefully bag the fur. It might just be from a goat, but what if it isn't? You've got a Yeti Fur Sample!", "item": "Yeti Fur Sample", "quantity": 1, "chance": 100 }
+            ]},
+            { "action": "Leave it", "outcomes": [
+                { "type": "NOTHING", "flavor": "It's probably just from a mountain goat. You leave it to the wind.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 134,
+        "type": "INTERACTIVE",
+        "scenario": "Your guide offers to sell you a traditional Yak Wool Scarf, promising it will protect you from the 'mountain spirits'.",
+        "options": [
+            { "action": "Buy the scarf", "outcomes": [
+                { "type": "REWARD", "flavor": "You buy the scarf. It's incredibly warm and comfortable.", "item": "Yak Wool Scarf", "quantity": 1, "chance": 70 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "It's a tourist scam. The scarf is low quality and you paid way too much. You basically lost one item's worth of coins.", "chance": 30 }
+            ]},
+            { "action": "Decline", "outcomes": [
+                { "type": "NOTHING", "flavor": "You politely decline. Your current gear is good enough.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 135,
+        "type": "INTERACTIVE",
+        "scenario": "You corner one of the rival mercenaries, who got separated from his group in the blizzard.",
+        "options": [
+            { "action": "Interrogate him", "outcomes": [
+                { "type": "REWARD", "flavor": "He cracks under pressure from Nasir bhai's intense questioning. He confesses they're smugglers looking for the statue. You get a Lifesaver he was carrying.", "item": "Lifesaver", "quantity": 1, "chance": 35 },
+                { "type": "NOTHING", "flavor": "He's tough. He spits at you and refuses to say a word.", "chance": 65 }
+            ]},
+            { "action": "Leave him to the cold", "outcomes": [
+                { "type": "NOTHING", "flavor": "You're adventurers, not murderers. You take his radio and leave him to be found by his team.", "chance": 70 },
+                { "type": "ADVENTURE_ENDS", "flavor": "He had a hidden beacon. His team finds you before they find him. Your adventure ends.", "chance": 30 }
+            ]}
+        ]
+    },
+    {
+        "id": 136,
+        "type": "INTERACTIVE",
+        "scenario": "An old monk gives you a small, colorful flag. He says it's a Tibetan Prayer Flag that will bring you good fortune.",
+        "options": [
+            { "action": "Accept the flag", "outcomes": [
+                { "type": "REWARD", "flavor": "You thank him and take the flag. It feels strangely comforting.", "item": "Tibetan Prayer Flag", "quantity": 1, "chance": 100 }
+            ]},
+            { "action": "Refuse", "outcomes": [
+                { "type": "NOTHING", "flavor": "You politely refuse, not wanting to take his possessions. He smiles and nods in understanding.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 137,
+        "type": "INTERACTIVE",
+        "scenario": "The path is icy and treacherous. Fakhruddin is panicking and refuses to move.",
+        "options": [
+            { "action": "Encourage him", "outcomes": [
+                { "type": "NOTHING", "flavor": "After some reassuring words from Nasir bhai, he cautiously continues. Progress is slow but safe.", "chance": 100 }
+            ]},
+            { "action": "Use the rope", "outcomes": [
+                { "type": "REWARD", "flavor": "You tie everyone together for safety. It works perfectly, and you find an Energy Drink on the path.", "item": "Energy Drink", "quantity": 1, "chance": 30 },
+                { "type": "ITEM_LOSS_ONE", "flavor": "You tie a rope, but Fakhruddin slips anyway, pulling on the line and causing you to drop one of your items.", "chance": 70 }
+            ]}
+        ]
+    },
+    {
+        "id": 138,
+        "type": "INTERACTIVE",
+        "scenario": "You find a satellite phone dropped by the missing expedition. The battery is almost dead.",
+        "options": [
+            { "action": "Make one call", "outcomes": [
+                { "type": "NOTHING", "flavor": "You manage to send your coordinates and a brief message to the authorities before the battery dies.", "chance": 60 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The smugglers intercept the call. They now know exactly where you are.", "chance": 40 }
+            ]},
+            { "action": "Save the battery", "outcomes": [
+                { "type": "REWARD", "flavor": "You save the battery. Later, you find a solar charger and get the phone working again.", "item": "Satellite Phone", "quantity": 1, "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 139,
+        "type": "INTERACTIVE",
+        "scenario": "A large, shadowy figure is seen moving on a distant ridge at dusk. It's too big to be a man.",
+        "options": [
+            { "action": "It's the Yeti!", "outcomes": [
+                { "type": "NOTHING", "flavor": "Fakhruddin starts screaming. It's probably just a bear, but the panic is real.", "chance": 100 }
+            ]},
+            { "action": "It's a trick of the light", "outcomes": [
+                { "type": "NOTHING", "flavor": "You dismiss it as an optical illusion caused by the setting sun. Nothing to worry about.", "chance": 70 },
+                { "type": "ADVENTURE_ENDS", "flavor": "It was not a trick of the light. It was very real, and it is very fast.", "chance": 30 }
+            ]}
+        ]
+    },
+    {
+        "id": 140,
+        "type": "INTERACTIVE",
+        "scenario": "You have a chance to sabotage the smugglers' camp while they are away.",
+        "options": [
+            { "action": "Destroy their supplies", "outcomes": [
+                { "type": "NOTHING", "flavor": "You ruin their food and fuel. It won't stop them, but it will slow them down significantly.", "chance": 100 }
+            ]},
+            { "action": "Steal their map", "outcomes": [
+                { "type": "REWARD", "flavor": "You sneak in and manage to steal their detailed map of the area, which shows their extraction point.", "item": "Smuggler's Map", "quantity": 1, "chance": 35 },
+                { "type": "ADVENTURE_ENDS", "flavor": "You get caught. The smugglers are not merciful.", "chance": 65 }
+            ]}
+        ]
+    },
+    {
+        "id": 141,
+        "type": "INTERACTIVE",
+        "scenario": "You're out of snacks and everyone is getting hungry and irritable.",
+        "options": [
+            { "action": "Eat the weird berries", "outcomes": [
+                { "type": "NOTHING", "flavor": "Nasir bhai identifies some edible berries. They taste sour, but they're better than nothing.", "chance": 50 },
+                { "type": "ITEM_LOSS_ALL", "flavor": "Those were the hallucinogenic berries. You all have a very bad trip and wake up hours later to find your gear has been stolen.", "chance": 50 }
+            ]},
+            { "action": "Push through the hunger", "outcomes": [
+                { "type": "NOTHING", "flavor": "You decide to power through. It's tough, but you save your energy by not arguing.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 142,
+        "type": "INTERACTIVE",
+        "scenario": "You get a chance to use the rival team's radio.",
+        "options": [
+            { "action": "Call for help", "outcomes": [
+                { "type": "REWARD", "flavor": "You successfully call the local authorities with the smugglers' location. Help is on the way!", "amount": 75000, "chance": 40 },
+                { "type": "ADVENTURE_ENDS", "flavor": "You call their boss by mistake. He is not happy to hear your voice and sends a cleanup crew.", "chance": 60 }
+            ]},
+            { "action": "Feed them false info", "outcomes": [
+                { "type": "NOTHING", "flavor": "You send them on a wild goose chase to the other side of the mountain range. That should buy you some time.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 143,
+        "type": "INTERACTIVE",
+        "scenario": "You stumble upon an ancient, abandoned monastery, hidden in a valley.",
+        "options": [
+            { "action": "Explore the monastery", "outcomes": [
+                { "type": "REWARD", "flavor": "In the library, you find a scroll that details the true history of the statue. It's not a treasure, but a key.", "item": "Ancient Scroll", "quantity": 1, "chance": 25 },
+                { "type": "NOTHING", "flavor": "The monastery has long been picked clean by time and looters. There is nothing of value left.", "chance": 55 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The monastery is structurally unstable. A section of the roof collapses on you.", "chance": 20 }
+            ]},
+            { "action": "Camp outside", "outcomes": [
+                { "type": "NOTHING", "flavor": "You decide the ancient structure is too dangerous to enter and make camp nearby.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 144,
+        "type": "INTERACTIVE",
+        "scenario": "A massive snowstorm hits, forcing you to take shelter in a small ice cave.",
+        "options": [
+            { "action": "Seal the entrance", "outcomes": [
+                { "type": "NOTHING", "flavor": "You block the entrance with snow to keep the wind out. It's cramped and cold, but you're safe from the storm.", "chance": 100 }
+            ]},
+            { "action": "Leave a small opening", "outcomes": [
+                { "type": "REWARD", "flavor": "Leaving an opening saves you from carbon dioxide buildup and allows you to see the smugglers pass by your cave, oblivious.", "item": "Lifesaver", "quantity": 1, "chance": 30 },
+                { "type": "ADVENTURE_ENDS", "flavor": "A curious yeti peeks through the opening. It is not friendly.", "chance": 70 }
+            ]}
+        ]
+    },
+    {
+        "id": 145,
+        "type": "INTERACTIVE",
+        "scenario": "You find your guide secretly meeting with one of the rival mercenaries.",
+        "options": [
+            { "action": "Confront him", "outcomes": [
+                { "type": "NOTHING", "flavor": "He confesses he was forced to feed them information because they threatened his family. He seems genuinely remorseful.", "chance": 50 },
+                { "type": "ADVENTURE_ENDS", "flavor": "It was a trap. The mercenary was waiting for you. Your adventure ends.", "chance": 50 }
+            ]},
+            { "action": "Follow him secretly", "outcomes": [
+                { "type": "REWARD", "flavor": "You follow him back to their camp and get a clear photo of their leader, providing crucial evidence.", "item": "Evidence Photo", "quantity": 1, "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 146,
+        "type": "INTERACTIVE",
+        "scenario": "Oli gets a clear drone shot of the smugglers handing a briefcase to a well-dressed man who arrived by helicopter.",
+        "options": [
+            { "action": "Record the evidence", "outcomes": [
+                { "type": "REWARD", "flavor": "You've captured the entire transaction on video! This is the proof you need to bring them all down.", "item": "Evidence Photo", "quantity": 1, "chance": 100 }
+            ]},
+            { "action": "Intervene", "outcomes": [
+                { "type": "ADVENTURE_ENDS", "flavor": "You try to stop them, but you are hopelessly outmatched. A noble, but very foolish, end to your adventure.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 147,
+        "type": "INTERACTIVE",
+        "scenario": "You manage to crack the Mysterious Cipher from the book. It's a list of offshore bank accounts and names.",
+        "options": [
+            { "action": "Memorize the info", "outcomes": [
+                { "type": "REWARD", "flavor": "You burn the book but keep the information. This is bigger than some statue; it's a massive criminal enterprise.", "amount": 150000, "chance": 100 }
+            ]},
+            { "action": "Keep the book", "outcomes": [
+                { "type": "ITEM_LOSS_ALL", "flavor": "The smugglers find you and take the book, along with everything else you have, to eliminate all evidence.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 148,
+        "type": "INTERACTIVE",
+        "scenario": "You are cornered on a cliff edge. Your only escape is a dangerous jump into a snowdrift below.",
+        "options": [
+            { "action": "Jump for it", "outcomes": [
+                { "type": "NOTHING", "flavor": "The snow is deep and soft. It's a rough landing, but you all survive and manage to escape.", "chance": 50 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The snow wasn't as deep as you thought. Your adventure ends with a thud.", "chance": 50 }
+            ]},
+            { "action": "Surrender", "outcomes": [
+                { "type": "DESTROYED", "flavor": "These smugglers have a strict 'no witnesses' policy. Surrendering was not the right move.", "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 149,
+        "type": "INTERACTIVE",
+        "scenario": "The final piece of the puzzle falls into place. The statue isn't a treasure; it's a key to a vault containing evidence against the corporation that funded the expedition.",
+        "options": [
+            { "action": "Go for the vault", "outcomes": [
+                { "type": "REWARD", "flavor": "You use the statue and expose a global conspiracy! The authorities are very grateful and give you a massive reward.", "amount": 750000, "chance": 40 },
+                { "type": "ADVENTURE_ENDS", "flavor": "The corporation has men everywhere. You are intercepted before you can reach the vault.", "chance": 60 }
+            ]},
+            { "action": "Leak the info online", "outcomes": [
+                { "type": "REWARD", "flavor": "You use Oli's tech skills to leak the information anonymously. The corporation's stock plummets, and chaos ensues.", "item": "Rare Item", "quantity": 1, "chance": 100 }
+            ]}
+        ]
+    },
+    {
+        "id": 150,
+        "type": "INTERACTIVE",
+        "scenario": "With the mystery solved, you stand at a Himalayan peak, watching the sunrise. It was supposed to be a simple trekking trip.",
+        "options": [
+            { "action": "Reflect on the adventure", "outcomes": [
+                { "type": "NOTHING", "flavor": "It was wild, dangerous, and you almost died several times. You'd do it again in a heartbeat.", "chance": 100 }
+            ]},
+            { "action": "Plan the next vacation", "outcomes": [
+                { "type": "NOTHING", "flavor": "Fakhruddin suggests a nice, quiet, five-star resort in the Maldives. Everyone immediately agrees.", "chance": 100 }
+            ]}
+        ]
+    }
+]
